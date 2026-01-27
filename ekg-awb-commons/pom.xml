@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.qaware.ekg.awb</groupId>
+        <artifactId>ekg-awb-covid-edition</artifactId>
+        <version>6.2.3-COVID-EDITION-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>ekg-awb-commons</artifactId>
+    <packaging>jar</packaging>
+
+    <description>
+        Common stuff for the whole AWB project including business-backend and the UI. It contains components
+        like helper, Eventbus, Lookup/Servicelocator, ...)
+    </description>
+
+    <dependencies>
+
+        <!-- 0-software /common libs -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4jVersion}</version>
+        </dependency>
+
+        <!--
+        the importer SDK provides an API that is used by import modules and
+        some parts of the sdk.core sub component also by this component
+        -->
+        <dependency>
+            <groupId>de.qaware.ekg.awb</groupId>
+            <artifactId>ekg-awb-sdk</artifactId>
+        </dependency>
+
+        <!--
+       used to deserialize the return message from OAuth services
+       -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+        <!-- CDI/bean management -->
+        <dependency>
+            <groupId>org.jboss.weld.se</groupId>
+            <artifactId>weld-se-core</artifactId>
+        </dependency>
+
+        <!-- test dependencies -->
+        <dependency>
+            <groupId>org.jboss.arquillian.container</groupId>
+            <artifactId>arquillian-container-test-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.arquillian.junit</groupId>
+            <artifactId>arquillian-junit-container</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>test-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

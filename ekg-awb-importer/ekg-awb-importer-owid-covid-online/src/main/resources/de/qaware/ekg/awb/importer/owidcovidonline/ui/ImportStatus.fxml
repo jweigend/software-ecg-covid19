@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<BorderPane id="outerBorderPane" minHeight="400.0" prefWidth="600.0" snapToPixel="false" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.qaware.ekg.awb.importer.owidcovidonline.ui.ImportStatusController">
+
+    <center>
+        <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="7.0">
+            <TextArea fx:id="txtAreaLogMessages" editable="false" />
+            <ProgressBar fx:id="progressBar" prefWidth="200.0" />
+            <Label fx:id="lbProgressText" text="-" textAlignment="CENTER" wrapText="true" />
+            <Button fx:id="btnClose" disable="true" text="Close" />
+            <padding>
+                <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+            </padding>
+        </VBox>
+    </center>
+
+
+</BorderPane>

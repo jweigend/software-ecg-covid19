@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import de.qaware.ekg.awb.common.ui.components.*?>
+<?import de.qaware.ekg.awb.metricanalyzer.ui.filterheader.converter.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<GridPane xmlns="http://javafx.com/javafx/8.0.72" xmlns:fx="http://javafx.com/fxml/1" id="chartHeaderGridPane"
+          fx:controller="de.qaware.ekg.awb.metricanalyzer.ui.filterheader.ChartHeaderController">
+
+
+    <stylesheets>
+        <URL value="@ChartHeader.css"/>
+    </stylesheets>
+
+
+    <columnConstraints>
+        <!-- (0) left column -->
+        <ColumnConstraints minWidth="260" prefWidth="334" maxWidth="334"  hgrow="ALWAYS"  />
+
+        <!-- (1) space -->
+        <ColumnConstraints minWidth="10"  maxWidth="10"   hgrow="NEVER"  />
+
+        <!-- (2) center column  -->
+        <ColumnConstraints minWidth="620" prefWidth="700" maxWidth="Infinity" hgrow="SOMETIMES"  />
+
+        <!-- (3) space -->
+        <ColumnConstraints minWidth="10" maxWidth="10"     hgrow="NEVER"  />
+
+        <!-- (4) right column -->
+        <ColumnConstraints minWidth="238"  maxWidth="238"  hgrow="NEVER"  />
+    </columnConstraints>
+
+    <!-- multiple rows only for center (column 2), the rest will do row span -->
+    <rowConstraints>
+        <!-- (0) metric filters -->
+        <RowConstraints minHeight="36"  maxHeight="400" vgrow="ALWAYS"/>
+
+        <!-- (1) space -->
+        <RowConstraints minHeight="10" maxHeight="10"   vgrow="NEVER"/>
+
+        <!-- (2) content row -->
+        <RowConstraints minHeight="52" maxHeight="52"   vgrow="NEVER"/>
+    </rowConstraints>
+
+    <!--
+    *******************************************************************************************************************
+       root-grid first columns elements
+    *******************************************************************************************************************
+    -->
+
+    <VBox fx:id="seriesFilterGroup" styleClass="fieldWrapper" GridPane.rowIndex="0" GridPane.rowSpan="3">
+
+        <!-- generic filter -->
+        <GridPane fx:id="measurementFilterPane" styleClass="filterPane, classicFilter" GridPane.hgrow="ALWAYS">
+
+            <Label fx:id="lbMeasurement" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+            <FilterableComboBox fx:id="cbxMeasurement" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                <converter>
+                    <MeasurementStringConverter/>
+                </converter>
+            </FilterableComboBox>
+        </GridPane>
+
+        <!-- ================== start classic filter ================== -->
+
+        <GridPane styleClass="filterPane, classicFilter">
+            <Label fx:id="lbHostGroup" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+            <FilterableComboBox fx:id="cbxHostGroup" GridPane.rowIndex="0" GridPane.columnIndex="1" >
+                <converter>
+                    <HostGroupStringConverter/>
+                </converter>
+            </FilterableComboBox>
+        </GridPane>
+
+        <GridPane styleClass="filterPane">
+            <Label fx:id="lbHost" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+            <FilterableComboBox fx:id="cbxHost" GridPane.rowIndex="0" GridPane.columnIndex="1" >
+                <converter>
+                    <HostStringConverter/>
+                </converter>
+            </FilterableComboBox>
+        </GridPane>
+
+        <!-- ================== end classic filter ==================  -->
+
+        <!-- ================== start cloud filter ================== -->
+
+        <GridPane styleClass="filterPane, cloudFilter">
+            <Label fx:id="lbNameSpace" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+            <FilterableComboBox fx:id="cbxNamespace" GridPane.rowIndex="0" GridPane.columnIndex="1" >
+                <converter>
+                    <NamespaceStringConverter/>
+                </converter>
+            </FilterableComboBox>
+        </GridPane>
+
+        <GridPane fx:id="serviceFilterPane" styleClass="filterPane, cloudFilter">
+            <Label fx:id="lbService" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+            <FilterableComboBox fx:id="cbxService" GridPane.rowIndex="0" GridPane.columnIndex="1" >
+                <converter>
+                    <ServiceStringConverter/>
+                </converter>
+            </FilterableComboBox>
+        </GridPane>
+
+        <GridPane styleClass="filterPane, cloudFilter">
+            <Label fx:id="lbPod" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+            <FilterableComboBox fx:id="cbxPod" GridPane.rowIndex="0" GridPane.columnIndex="1" >
+                <converter>
+                    <PodStringConverter/>
+                </converter>
+            </FilterableComboBox>
+        </GridPane>
+
+        <GridPane styleClass="filterPane, cloudFilter">
+            <Label fx:id="lbContainer" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+            <FilterableComboBox fx:id="cbxContainer" GridPane.rowIndex="0" GridPane.columnIndex="1" >
+                <converter>
+                    <ContainerStringConverter/>
+                </converter>
+            </FilterableComboBox>
+        </GridPane>
+
+        <!-- =================== end cloud filter ===================  -->
+
+        <!-- ================= start generic filter ================= -->
+
+        <GridPane styleClass="filterPane">
+            <Label fx:id="lbProcess" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+            <FilterableComboBox fx:id="cbxProcess" GridPane.rowIndex="0" GridPane.columnIndex="1" >
+                <converter>
+                    <ProcessStringConverter/>
+                </converter>
+            </FilterableComboBox>
+        </GridPane>
+
+        <GridPane styleClass="filterPane">
+            <Label fx:id="lbMetricGroup" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+            <FilterableComboBox fx:id="cbxMetricGroup" GridPane.rowIndex="0" GridPane.columnIndex="1"  >
+                <converter>
+                    <MetricGroupStringConverter/>
+                </converter>
+            </FilterableComboBox>
+        </GridPane>
+
+        <!-- ================== end generic filter ================== -->
+
+    </VBox>
+
+
+
+    <!--
+    *******************************************************************************************************************
+       root-grid center columns elements
+    *******************************************************************************************************************
+    -->
+    <GridPane id="metricFilterGroup" styleClass="fieldWrapper" GridPane.rowIndex="0" GridPane.columnIndex="2" >
+
+        <columnConstraints>
+            <ColumnConstraints minWidth="80"  maxWidth="80"       hgrow="NEVER" halignment="RIGHT"  />
+            <ColumnConstraints minWidth="200" maxWidth="Infinity" hgrow="ALWAYS" />
+        </columnConstraints>
+
+        <rowConstraints>
+            <!-- (0) metric/expert filters (three rows) -->
+            <RowConstraints minHeight="36" maxHeight="36" vgrow="NEVER"/>
+            <RowConstraints minHeight="36" maxHeight="36" vgrow="NEVER"/>
+            <RowConstraints minHeight="36" vgrow="ALWAYS"/>
+        </rowConstraints>
+
+        <!-- ================== [start] center placed elements top (metric / expert filters) ==================  -->
+        <Label fx:id="lbMetric" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <FilterableComboBox fx:id="cbxMetric" GridPane.rowIndex="0" GridPane.columnIndex="1" promptText="Metrics"
+                  visibleRowCount="6" editable="true">
+            <converter>
+                <MetricStringConverter/>
+            </converter>
+        </FilterableComboBox>
+
+        <Label fx:id="labelExclude" text="Exclude:" GridPane.rowIndex="1" GridPane.columnIndex="0"  />
+        <TextField fx:id="txtExclude" GridPane.rowIndex="1" GridPane.columnIndex="1" promptText="Exclusions" />
+
+        <!-- Hidden Textfield -->
+        <Label fx:id="labelExpertQuery" text="Query:" GridPane.rowIndex="0" GridPane.columnIndex="0"  />
+        <TextArea fx:id="taExpertQuery" GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.rowSpan="3"
+                  wrapText="true" visible="false" minHeight="10" maxHeight="120" />
+
+        <!-- ================== [end] center placed elements top (metric / expert filters) ==================  -->
+    </GridPane>
+
+
+
+
+    <!-- ================ [start] center placed elements bottom (control filters and chart) =============  -->
+
+    <GridPane id="chartHeaderControlBar" styleClass="fieldWrapper" GridPane.rowIndex="2" GridPane.columnIndex="2">
+
+        <columnConstraints>
+            <!-- (0) label of expert checkbox with length of first label column of the grid in the top -->
+            <ColumnConstraints minWidth="80"  maxWidth="80"  hgrow="NEVER" halignment="RIGHT" />
+            <!-- (1) checkbox expert mode without label -->
+            <ColumnConstraints minWidth="27"  maxWidth="27"  hgrow="NEVER" />
+            <!-- (2) label for checkbox "show all filters"  -->
+            <ColumnConstraints minWidth="128" maxWidth="128" hgrow="NEVER" halignment="LEFT" />
+            <!-- (3) checkbox "show all filters" without label -->
+            <ColumnConstraints minWidth="1"  maxWidth="1"  hgrow="NEVER"/>
+            <!-- (4) empty space that can scale in the width to fit window size -->
+            <ColumnConstraints minWidth="10"                 hgrow="ALWAYS" halignment="RIGHT" />
+            <!-- (5) combine-mode button -->
+            <ColumnConstraints minWidth="120" maxWidth="120" hgrow="NEVER"  />
+            <!-- (6) space -->
+            <ColumnConstraints minWidth="20"  maxWidth="20"  hgrow="NEVER"  />
+            <!-- (7) bookmark button -->
+            <ColumnConstraints minWidth="40"  maxWidth="40"  hgrow="NEVER"  />
+            <!-- (8) space -->
+            <ColumnConstraints minWidth="10"  maxWidth="10"  hgrow="NEVER"  />
+            <!-- (9) refresh button -->
+            <ColumnConstraints minWidth="107" maxWidth="107" hgrow="NEVER"  />
+        </columnConstraints>
+
+        <rowConstraints>
+            <RowConstraints minHeight="36" maxHeight="36" vgrow="NEVER"  />
+        </rowConstraints>
+
+        <!--
+        <Label text="Expert Mode:"  GridPane.columnIndex="0" translateX="-5" />
+        <CheckBox fx:id="cbExpertMode" GridPane.columnIndex="1" mnemonicParsing="false" >
+            <tooltip>
+                <Tooltip text="Lucene Query Language"/>
+            </tooltip>
+        </CheckBox>
+        -->
+
+        <Label text="Enable additional filter" fx:id="lbEnableAllFilter" GridPane.columnIndex="2" />
+
+        <CheckBox fx:id="cbEnableAllFilter" mnemonicParsing="false" GridPane.columnIndex="1" >
+            <tooltip>
+                <Tooltip text="Enable additional cloud filter"/>
+            </tooltip>
+        </CheckBox>
+
+        <Label  text="Combine metrics:  " GridPane.columnIndex="4" translateY="1" />
+
+        <ComboBox fx:id="cbxCombineMode" GridPane.columnIndex="5" />
+
+        <Button fx:id="btRefreshGraph" GridPane.columnIndex="7" mnemonicParsing="false" />
+
+        <Button fx:id="btBookmark" GridPane.columnIndex="9" mnemonicParsing="false" text="Bookmark it!"   />
+
+
+    </GridPane>
+
+
+    <!-- ================ [end] center placed elements bottom (control filters and chart) =============  -->
+
+
+
+    <!--
+    *******************************************************************************************************************
+       root-grid right columns elements
+    *******************************************************************************************************************
+    -->
+
+    <!--  elements block with search and post-processing control elements -->
+    <VBox id="vbPostProcessingBlock"  styleClass="fieldWrapper" GridPane.columnIndex="4"  GridPane.rowSpan="3">
+
+        <!-- additional filter "from"  -->
+        <GridPane styleClass="filterPane" GridPane.hgrow="ALWAYS">
+            <Label text="From:" GridPane.rowIndex="0" GridPane.columnIndex="0" disable="${cbExpertMode.selected}" />
+            <DatePicker fx:id="startPicker" GridPane.rowIndex="0" GridPane.columnIndex="1" promptText="From"/>
+        </GridPane>
+
+        <!-- additional filter "to"  -->
+        <GridPane  styleClass="filterPane" GridPane.hgrow="ALWAYS">
+            <Label text="To:" GridPane.rowIndex="0" GridPane.columnIndex="0" disable="${cbExpertMode.selected}" />
+            <DatePicker fx:id="stopPicker" GridPane.rowIndex="0" GridPane.columnIndex="1" promptText="To" />
+        </GridPane>
+
+        <!-- post-processing option "series value limit" -->
+        <GridPane  styleClass="filterPane" GridPane.hgrow="ALWAYS">
+            <Label text="Vec. Limit:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+            <ComboBox fx:id="cbxThreshold" GridPane.rowIndex="0" GridPane.columnIndex="1" promptText="Amount point" />
+        </GridPane>
+
+        <!-- post-processing option "type of series smoothing" -->
+        <GridPane styleClass="filterPane" GridPane.hgrow="ALWAYS">
+            <Label text="Smoothing:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+            <ComboBox fx:id="cbxSmoothingType" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+        </GridPane>
+
+        <!-- post-processing option "granularity of series smoothing -->
+        <GridPane  styleClass="filterPane" GridPane.hgrow="ALWAYS">
+            <Label text="Granularity:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+            <ComboBox fx:id="cbxSmoothingGranularity" GridPane.rowIndex="0" GridPane.columnIndex="1"  />
+        </GridPane>
+    </VBox>
+
+</GridPane>

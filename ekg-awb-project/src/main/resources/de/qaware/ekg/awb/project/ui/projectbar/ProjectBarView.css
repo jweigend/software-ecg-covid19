@@ -1,0 +1,129 @@
+
+#projectBar {
+    -fx-background-color: #5A5A5A;
+    -fx-border-width: 2 0 2 0;
+    -fx-border-color: #0096C9;
+    -fx-spacing: 10;
+    -fx-padding: 2 7 2 7;
+    -fx-min-height: 40;
+    -fx-max-height: 40;
+    -fx-max-width: 9999;
+    -fx-font-size: 12;
+}
+
+#projectBar .label {
+    -fx-text-fill: #EEEEEE;
+    -fx-font-size: 12;
+}
+
+.highlighted {
+    -fx-font-weight: bold;
+}
+
+.projectBar #viewFlavorCB {
+    -fx-pref-width: 360;
+}
+
+#btnEditProject {
+    -fx-background-color: transparent;
+    -fx-background-repeat: no-repeat;
+    -fx-padding: 0;
+    -fx-pref-height: 11;
+    -fx-max-height: 11;
+    -fx-pref-width: 18;
+    -fx-background-image: url('icons/edit-icon3.png');
+    -fx-background-size: 14;
+    -fx-background-position: left;
+    -fx-translate-y: -2;
+
+}
+
+#btnEditProject:hover {
+    -fx-background-image: url('icons/edit-icon3-bright.png');
+}
+
+#btnEditProject:pressed {
+    -fx-background-image: url('icons/edit-icon3-blue.png');
+}
+
+
+#btnImportDataToProject {
+    -fx-background-color: #8B8B8B;
+    -fx-text-fill: #EEEEEE;
+    -fx-padding: 2 12 2 12;
+}
+
+#btnImportDataToProject:hover{
+    -fx-background-color: #9e9e9e;
+    -fx-text-fill: #f1f1f1;
+}
+
+#btnImportDataToProject:pressed{
+    -fx-background-color: #93b6c9;
+    -fx-text-fill: #f6f6f6;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * ComboBox                                                                    *
+ *                                                                             *
+ ******************************************************************************/
+
+.combo-box-base  {
+    -fx-background-radius: 3;
+    -fx-border-radius: 1;
+    -fx-border-width: 1;
+    -fx-border-color: #BBBBBB;
+    -fx-padding: 1;
+    -fx-background-color: #45494d;
+    -fx-fit-to-height: false;
+    -fx-fill-height: false;
+    -fx-font-size: 12;
+    -fx-max-height: 20;
+}
+
+.combo-box-base .list-cell {
+    -fx-text-fill: EEEEEE;
+    -fx-padding: 1 5 1 5;
+}
+
+.combo-box-base .arrow-button {
+    -fx-background-color: #575757;
+}
+
+.combo-box-popup > .list-view {
+    -fx-effect: null;
+    -fx-text-fill: #EEEEEE;
+}
+
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell {
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 12;
+    -fx-padding: 0;
+}
+
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:hover{
+    -fx-background-color: #1995c4;
+}
+
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected{
+    -fx-background-color: #207e97;
+    -fx-text-fill: #EEEEEE;
+}
+
+.combo-box-popup > .list-view  .list-cell {
+    -fx-background-color: #45494d;
+    -fx-text-fill: #cdcdcd;
+}
+
+.combo-box-popup > .list-view  .list-cell:selected {
+    -fx-text-fill: #0096c9;
+}
+
+.combo-box-popup > .list-view  .list-cell:disabled {
+    -fx-text-fill: #878d8c;
+}
+
+.ekgComboboxButtonCell {
+    -fx-text-fill: #cdcdcd;
+}

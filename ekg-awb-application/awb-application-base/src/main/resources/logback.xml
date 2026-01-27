@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    - encoders are assigned the type
+              ch.qos.logback.classic.encoder.PatternLayoutEncoder by default
+         <encoder>
+             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+         </encoder>
+     </appender>
+     <timestamp key="bySecond" datePattern="yyyyMMdd'T'HHmmss"/>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>software-ekg.log</file>
+        <append>false</append>
+        <encoder>
+            <pattern>%date [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="afester.javafx.svg" level="ERROR"/>
+    <logger name="org.jboss.weld" level="INFO"/>
+    <logger name="org.apache.solr" level="INFO"/>
+    <logger name="org.apache.solr.update" level="WARN"/>
+    <logger name="org.apache.solr.core.SolrCore" level="OFF"/>
+    <logger name="org.apache.solr.core.SolrCore.Request" level="WARN"/>
+    <logger name="org.apache.solr.common.cloud.ConnectionManager" level="WARN"/>
+    <logger name="org.apache.solr.common.cloud.DefaultConnectionStrategy" level="WARN"/>
+    <logger name="org.apache.http" level="INFO"/>
+    <logger name="org.apache.zookeeper" level="INFO"/>
+    <logger name="com.espertech.esper" level="INFO"/>
+    <logger name="com.espertech.esper.core.service" level="WARN"/>
+    <logger name="com.espertech.esper.core.deploy.EPLModuleUtil" level="OFF"/>
+    <logger name="com.espertech.esper.event.bean.PropertyHelper" level="OFF"/>
+    <logger name="de.qaware.sdfx" level="INFO"/>
+    <logger name="org.apache.zookeeper.ClientCnxn" level="WARN"/>
+    <logger name="e.qaware.ekg.awb.da.solr.SolrRepositoryClient" level="WARN"/>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+    </root>
+</configuration>

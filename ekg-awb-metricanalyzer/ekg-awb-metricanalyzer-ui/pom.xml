@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.qaware.ekg.awb</groupId>
+        <artifactId>ekg-awb-metricanalyzer</artifactId>
+        <version>6.2.3-COVID-EDITION-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>ekg-awb-metricanalyzer-ui</artifactId>
+    <packaging>jar</packaging>
+
+    <description>
+        The Metricanalyzer UI module contains UI components to display and extends the chart, provide query filters
+        and common stuff that is related to the metric analytics like the bookmark functionality.
+        This module also provides the most of the concrete nodes and further APIs for the AWB explorer that is
+        known by this component but not vice versa.
+    </description>
+
+    <dependencies>
+
+        <!-- the metric analyzer needs to know the explorer module because it provides the tree node that are derived
+        by the series tree items and it has serves the APIs to register ItemBuilder and event listener -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ekg-awb-explorer</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- business logic of this module -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ekg-awb-metricanalyzer-bl</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- provides the chart engine for stacked charts -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ekg-awb-common-ui-chartng</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- the explorer module that will filled by this component with domain specific nodes -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ekg-awb-common-ui-explorer</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- various common ui components like special combo box skins -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ekg-awb-common-ui-misc</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ekg-awb-common-ui-misc</artifactId>
+            <version>${project.version}</version>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ekg-awb-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- required to serialize/deserialize the bookmark payload -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>de.qaware.stagediver.fx</groupId>
+            <artifactId>windowmanager-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.qaware.stagediver.fx</groupId>
+            <artifactId>platform-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ekg-awb-commons</artifactId>
+            <version>${project.version}</version>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

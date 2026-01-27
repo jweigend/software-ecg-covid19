@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2018 (64 Bit) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="4mm" height="4mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 400 400"
+ >
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:white;stroke-width:0.2;stroke-miterlimit:22.9256}
+    .fil0 {fill:none}
+    .fil1 {fill:#006633;fill-rule:nonzero}
+    .fil2 {fill:white;fill-rule:nonzero}
+   ]]>
+  </style>
+ </defs>
+ <g id="Ebene_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <rect class="fil0 str0" x="4.52" y="32.41" width="390.99" height="352.37"/>
+  <polygon class="fil1" points="371.89,74.64 275.65,74.64 275.65,56.18 131.41,56.18 131.41,74.64 35.17,74.64 35.17,309.12 131.41,309.12 131.41,327.58 275.65,327.58 275.65,309.12 371.89,309.12 "/>
+  <polygon class="fil2" points="54.9,287.68 54.9,96.09 131.41,96.09 131.41,287.68 "/>
+  <polygon class="fil2" points="255.92,306.13 151.14,306.13 151.14,77.62 255.92,77.62 "/>
+  <polygon class="fil2" points="352.16,287.68 275.65,287.68 275.65,96.09 352.16,96.09 "/>
+  <polygon class="fil1" points="72.31,132.32 122.73,132.32 122.73,152.05 72.31,152.05 "/>
+  <path class="fil1" d="M307.97 246.14c5.58,0 10.12,4.53 10.12,10.11 0,5.58 -4.54,10.11 -10.12,10.11 -5.58,0 -10.11,-4.53 -10.11,-10.11 0,-5.58 4.53,-10.11 10.11,-10.11z"/>
+  <path class="fil1" d="M202.75 261.93c5.57,0 10.11,4.53 10.11,10.11 0,5.58 -4.54,10.11 -10.11,10.11 -5.58,0 -10.12,-4.53 -10.12,-10.11 0,-5.58 4.54,-10.11 10.12,-10.11z"/>
+  <polygon class="fil1" points="282.76,170.8 333.19,170.8 333.19,190.53 282.76,190.53 "/>
+  <polygon class="fil1" points="282.76,132.32 333.19,132.32 333.19,152.05 282.76,152.05 "/>
+  <polygon class="fil1" points="171.67,157.6 233.82,157.6 233.82,177.33 171.67,177.33 "/>
+  <polygon class="fil1" points="72.31,170.8 122.73,170.8 122.73,190.53 72.31,190.53 "/>
+  <polygon class="fil1" points="171.67,119.12 233.82,119.12 233.82,138.85 171.67,138.85 "/>
+  <path class="fil1" d="M97.52 246.14c5.58,0 10.11,4.53 10.11,10.11 0,5.58 -4.53,10.11 -10.11,10.11 -5.58,0 -10.12,-4.53 -10.12,-10.11 0,-5.58 4.54,-10.11 10.12,-10.11z"/>
+ </g>
+</svg>

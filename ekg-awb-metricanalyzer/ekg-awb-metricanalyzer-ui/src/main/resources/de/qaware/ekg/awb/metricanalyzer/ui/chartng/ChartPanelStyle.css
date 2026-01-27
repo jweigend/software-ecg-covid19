@@ -1,0 +1,107 @@
+@import "../MetricAnalyzerBaseStyle.css";
+
+#chartWrapper {
+    -fx-background-color: #FDFDFC;
+    -fx-border-color: #0096c9;
+    -fx-border-width: 2 0 2 0;
+}
+
+.scroll-pane {
+    -fx-border-width: 0;
+    -fx-background-color:transparent;
+}
+
+.actionGroupHeaderLabel {
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #e5e5e5;
+    -fx-max-width: 9999;
+    -fx-padding: 4 0 3 4;
+}
+
+#chartExportActionsLabel {
+    -fx-padding: 14 0 3 4;
+}
+
+.actionGroupCheckbox {
+    -fx-padding: 5 0 5 4;
+}
+
+#buttonGapWrapper {
+    -fx-spacing: 10;
+    -fx-padding: 10 0 0 4;
+}
+
+.actionGroupBtn {
+    -fx-min-width: 228;
+    -fx-pref-width: 302;
+    -fx-max-width: 302;
+    -fx-max-height: 26;
+    -fx-alignment: center-left;
+    -fx-padding: 3 0 3 30;
+    -fx-background-size: 20;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 2% center;
+}
+
+#btnExportToExcel {
+    -fx-background-image: url("icons/excel.png");
+}
+
+#btnExportToPNG {
+    -fx-background-image: url("icons/png.png");
+}
+
+
+.timezoneComboBoxBtn {
+    -fx-background-image: url("icons/timezone-icon.png");
+    -fx-max-width: 22;
+    -fx-pref-width: 22;
+    -fx-min-width: 22;
+    -fx-max-height: 20;
+    -fx-smooth: true;
+    -fx-background-size: 18;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: rgba(255, 255, 255, 0);
+    -fx-hgap: 0;
+}
+
+
+.timezoneComboBoxBtn:hover {
+    -fx-background-image: url("icons/timezone-dark-icon.png");
+}
+
+
+.timezoneComboBox .arrow{
+  /*-fx-opacity: 0.0;*/
+    -fx-pref-width: 2;
+    -fx-max-width: 2;
+    -fx-scale-x: 0.1;
+    -fx-shape: null;
+    -fx-padding: 0;
+}
+
+.timezoneComboBox .arrow-button {
+    /*-fx-opacity: 0.0;*/
+    -fx-pref-width: 2;
+    -fx-max-width: 2;
+    -fx-scale-x: 0.1;
+    -fx-padding: 0;
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+}
+
+.timezoneComboBox  {
+    -fx-border-width: 0;
+    -fx-padding: 0;
+    -fx-background-color: rgba(255, 255, 255, 0);
+    -fx-font-size: 0;
+    -fx-min-width: 22;
+    -fx-max-width: 22;
+    -fx-pref-width: 22;
+    -fx-max-height: 20;
+
+    -fx-translate-y: -10;
+    -fx-translate-x: 15;
+}
+
+

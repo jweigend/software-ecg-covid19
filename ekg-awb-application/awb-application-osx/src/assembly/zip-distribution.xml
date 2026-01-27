@@ -1,0 +1,100 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+
+    <id>awb-zip-distribution</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+
+
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <!-- bootstrap script and all other bundle resources need by MacOS -->
+    <files>
+        <!-- bootstrap script that will used as binary -->
+        <file>
+            <fileMode>0755</fileMode>
+            <outputDirectory>Software-EKG.app/Contents/MacOS</outputDirectory>
+            <source>${basedir}/src/main/resources/distribution/MacOS/start-software-ekg</source>
+        </file>
+
+        <!-- XML based property list that acts as Apple bundle descriptor -->
+        <file>
+            <outputDirectory>Software-EKG.app/Contents</outputDirectory>
+            <source>${basedir}/src/main/resources/distribution/Info.plist</source>
+        </file>
+
+        <file>
+            <outputDirectory>Software-EKG.app/Contents</outputDirectory>
+            <source>${basedir}/src/main/resources/distribution/PkgInfo</source>
+        </file>
+
+        <!-- the application logo that will shown in finder and Dock -->
+        <file>
+            <outputDirectory>Software-EKG.app/Contents/Resources</outputDirectory>
+            <source>${basedir}/src/main/resources/distribution/resources/ekg-logo-ico.icns</source>
+        </file>
+
+        <!-- Fallback data for OWID-COVID-Plugin (compressed) -->
+        <file>
+            <source>${basedir}/../awb-application-base/src/main/resources/covid-fallback-data.csv.gz</source>
+            <outputDirectory>Software-EKG.app/data</outputDirectory>
+        </file>
+    </files>
+
+
+    <fileSets>
+
+        <!-- EKG database/repository -->
+        <fileSet>
+            <directory>${basedir}/../../ekg-awb-da/ekg-awb-da-solr/src/main/solr</directory>
+            <outputDirectory>Software-EKG.app/Contents/solr</outputDirectory>
+            <includes>
+                <include>**/*</include>
+                <include>*</include>
+            </includes>
+        </fileSet>
+
+        <!-- Bundle the system JDK from JAVA_HOME -->
+        <fileSet>
+            <directory>${java.home}</directory>
+            <outputDirectory>Software-EKG.app/Contents/jdk</outputDirectory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+            <excludes>
+                <exclude>bin/*</exclude>
+            </excludes>
+        </fileSet>
+
+        <fileSet>
+            <directory>${java.home}/bin</directory>
+            <outputDirectory>Software-EKG.app/Contents/jdk/bin</outputDirectory>
+            <fileMode>0755</fileMode>
+            <includes>
+                <include>*</include>
+            </includes>
+        </fileSet>
+
+        <!-- various config files for EKG AWB and it's import modules -->
+        <fileSet>
+            <directory>${basedir}/../awb-application-base/src/main/resources/distribution/configs</directory>
+            <outputDirectory>Software-EKG.app/Contents/configs</outputDirectory>
+            <excludes>
+                <exclude>**/do_not_delete</exclude>
+            </excludes>
+        </fileSet>
+
+    </fileSets>
+
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>Software-EKG.app/Contents/libs</outputDirectory>
+            <unpack>false</unpack>
+            <!-- JavaFX JARs are now included for module-path loading -->
+        </dependencySet>
+    </dependencySets>
+
+
+</assembly>

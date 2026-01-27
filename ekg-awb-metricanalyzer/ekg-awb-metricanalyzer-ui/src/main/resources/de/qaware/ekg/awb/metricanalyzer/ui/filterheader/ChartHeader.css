@@ -1,0 +1,109 @@
+@import "../MetricAnalyzerBaseStyle.css";
+
+#chartHeaderGridPane {
+    -fx-padding: 10 10 10 6;
+    -fx-min-height: 180;
+    -fx-max-height: 400;
+    -fx-grid-lines-visible: false;
+
+}
+
+
+
+/*============== left column styles ==============*/
+
+#seriesFilterGroup {
+    -fx-hgap: 4;
+}
+
+#seriesFilterGroup .filterPane {
+    -fx-min-width: 238;
+}
+
+#seriesFilterGroup .filterPane > FilterableComboBox {
+    -fx-fill-width: TRUE;
+    -fx-min-width: 100;
+    -fx-pref-width: 194;
+    -fx-max-width: 194;
+}
+
+/*============= center column styles =============*/
+
+#metricFilterGroup {
+    -fx-max-height: 999;
+    -fx-hgap: 0;
+    -fx-vgap: 0;
+    -fx-spacing: 4;
+}
+
+#cbxMetric {
+    -fx-max-width: 999999;
+    -fx-pref-width: 9999;
+}
+
+#metricFilterGroup FilterableComboBox {
+    -fx-fit-to-width: true;
+    -fx-max-width: 999999;
+    -fx-pref-width: 9999;
+}
+
+#metricFilterGroup > Label {
+    -fx-max-width: 70;
+    -fx-min-width: 70;
+    -fx-padding: 0 5 0 0;
+    -fx-alignment: center-right;
+}
+
+#chartHeaderControlBar {
+    -fx-padding: 6 10 2 10;
+    -fx-grid-lines-visible: false;
+}
+
+cbxCombineMode {
+    -fx-max-width: 120;
+    -fx-max-height: 27;
+}
+
+#btBookmark {
+    -fx-max-height: 27;
+    -fx-max-width: 999;
+}
+
+#btRefreshGraph {
+    -fx-max-width: 40;
+}
+
+/*============== right column styles ==============*/
+
+#vbPostProcessingBlock {
+    -fx-hgap: 4;
+}
+
+#vbPostProcessingBlock .filterPane > ComboBox {
+    -fx-fill-width: TRUE;
+    -fx-max-width: 135;
+    -fx-min-width: 135;
+    -fx-pref-width: 135;
+}
+
+#vbPostProcessingBlock .filterPane > DatePicker {
+    -fx-fill-width: TRUE;
+    -fx-max-width: 135;
+    -fx-min-width: 135;
+}
+
+#vbPostProcessingBlock .filterPane > Label {
+    -fx-pref-width: 103;
+    -fx-alignment: center-right;
+}
+
+/*============== misc ==============*/
+
+.classicFilter {
+
+}
+
+
+.cloudFilter {
+
+}

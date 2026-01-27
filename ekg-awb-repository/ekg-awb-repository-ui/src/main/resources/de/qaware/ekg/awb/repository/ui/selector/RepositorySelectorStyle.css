@@ -1,0 +1,14 @@
+
+
+
+.repositorySelectorPane {
+    -fx-padding: 0;
+    -fx-hgap: 10;
+    -fx-vgap: 10;
+}
+
+
+.combo-box:disabled .list-cell {
+    -fx-text-fill: #990000;
+    -fx-opacity: 0.9;
+}

@@ -1,0 +1,132 @@
+package de.qaware.ekg.awb.repository.bl.repositories;
+
+import de.qaware.ekg.awb.repository.api.EkgRepository;
+import de.qaware.ekg.awb.repository.api.RepositoryClient;
+import de.qaware.ekg.awb.repository.api.RepositoryClientFactory;
+import de.qaware.ekg.awb.repository.api.model.EkgRepositoryDbType;
+import de.qaware.ekg.awb.repository.api.types.ElasticSearch;
+import de.qaware.ekg.awb.sdk.awbapi.repository.ResourceAuthType;
+
+import javax.enterprise.inject.Instance;
+import javax.enterprise.inject.New;
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
+/**
+ * An EkgRepository implementation that represents a Software-EKG repository build
+ * on top of a ElasticSearch NoSQL database.
+ * This class has also a factory used as builder for it's own and some additional
+ * properties like the member 'dbIndexName' that are not used by itself but belongs
+ * to the EkgRepository definition and used by derived classes.
+ */
+public class ElasticSearchRepository extends EkgRepositoryBase {
+
+
+    /**
+     * A factory implementation that will provide a {@link RepositoryClient} instance
+     * based on the repository properties like the connection url and credentials.
+     * The factory will injected via CDI and is specialized on ElasticSearch resources.
+     */
+    @Inject
+    @ElasticSearch // only inject factories that produce ElasticSearch clients
+    protected RepositoryClientFactory repositoryClientFactory;
+
+
+    //=================================================================================================================
+    // ElasticSearchRepository constructors
+    //=================================================================================================================
+
+    /**
+     * Default constructor, for internal use and CDI.
+     */
+    public ElasticSearchRepository() {
+        // no op
+    }
+
+    /**
+     * Initialize a solr types.
+     *
+     * @param repositoryName the the alias name of the types
+     * @param connectionUrl  the connection url used to reach the ElasticSearch sever in the network
+     * @param ekgRepositoryDbType  the type of this types.
+     * @param resourceAuthType   the authentication type the types used for client connections
+     * @param username the optional username used for authentication if authentication type is not "none".
+     * @param password the optional username used for authentication if authentication type is not "none".
+     */
+    public ElasticSearchRepository(String id,
+                                 String repositoryName,
+                                 String connectionUrl,
+                                 EkgRepositoryDbType ekgRepositoryDbType,
+                                 ResourceAuthType resourceAuthType,
+                                 String username,
+                                 String password) {
+
+        this.id = id;
+        this.repositoryName = repositoryName;
+        this.connectionUrl = connectionUrl;
+        this.ekgRepositoryDbType = ekgRepositoryDbType;
+        this.repositoryAuthType = resourceAuthType;
+        this.username = username;
+        this.password = password;
+    }
+
+    //=================================================================================================================
+    //  API of the base class that has to implement
+    //=================================================================================================================
+
+    @Override
+    protected RepositoryClientFactory getRepositoryClientFactory() {
+        return repositoryClientFactory;
+    }
+
+    //=================================================================================================================
+    //  custom client factory implementation for this repository type
+    //=================================================================================================================
+
+    /**
+     * Factory to create a {@link ElasticSearchRepository}.
+     */
+    @Singleton
+    public static class Factory implements EkgRepository.Factory {
+
+        @Inject
+        @New
+        private Instance<ElasticSearchRepository> repositories;
+
+        protected Instance<? extends ElasticSearchRepository> getRepositories() {
+            return repositories;
+        }
+
+        @Override
+        public EkgRepository getInstance(String id,
+                                         String name,
+                                         String connectionUrl,
+                                         String dbIndexName,
+                                         EkgRepositoryDbType ekgRepositoryDbType,
+                                         ResourceAuthType resourceAuthType,
+                                         String username,
+                                         String password) {
+
+            if (!isTypeSupported(ekgRepositoryDbType)) {
+                throw new IllegalArgumentException("Can not create ElasticSearch types of type " + ekgRepositoryDbType);
+            }
+
+            ElasticSearchRepository repository = getRepositories().get();
+            repository.id = id;
+            repository.repositoryName = name;
+            repository.connectionUrl = connectionUrl;
+            repository.dbIndexName = dbIndexName;
+            repository.ekgRepositoryDbType = ekgRepositoryDbType;
+            repository.repositoryAuthType = resourceAuthType;
+            repository.username = username;
+            repository.password = password;
+
+            return repository;
+        }
+
+        @Override
+        public boolean isTypeSupported(EkgRepositoryDbType type) {
+            return type == EkgRepositoryDbType.ELASTICSEARCH_STANDALONE;
+        }
+    }
+}

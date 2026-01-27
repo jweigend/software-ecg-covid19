@@ -1,0 +1,16 @@
+
+.chartDetailPopup {
+    -fx-padding: 5 5 5 5px;
+    -fx-min-width: 200;
+    -fx-border-width: 0.5 1 1 0.3;
+    -fx-border-color: rgba(80, 163, 210, 0.85);
+    -fx-background-color: rgba(236, 246, 255, 0.94);
+}
+
+.chartDetailPopup {
+    -fx-font-size: 10;
+}
+
+.chartDetailPopup .label {
+    -fx-font-weight: bold;
+}

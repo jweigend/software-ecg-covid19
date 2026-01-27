@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.TextFlow?>
+<?import java.net.URL?>
+<Pane id="outerBorderPane" minHeight="510.0" prefWidth="765.0" snapToPixel="false"
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="de.qaware.ekg.awb.application.base.about.AboutDialogController">
+
+    <stylesheets>
+        <URL value="@AboutDialog.css"/>
+    </stylesheets>
+
+    <ImageView fx:id="ivAboutBanner" fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" layoutX="-4"  >
+        <Image url="@logo-6.2.3-about-covid.png"/>
+    </ImageView>
+
+    <Pane fx:id="ivFounderBannerWrapper" prefHeight="450.0" prefWidth="800.0" layoutX="-4" visible="false" >
+        <ImageView fx:id="ivFounderBanner" pickOnBounds="true" preserveRatio="true"> </ImageView>
+
+        <Label id="lbJWE" text=" Waldorf formerly known as Johannes Weigend " />
+        <Label id="lbSKR" text=" Statler formerly known as Stefan Krause " />
+    </Pane>
+
+    <Label text="Visit us: " layoutX="523" layoutY="521"/>
+    <Hyperlink id="linkHomepage" fx:id="linkHomepage" ellipsisString="" minWidth="40.0" prefHeight="40.0" layoutX="636"
+               layoutY="510"  text="www.weigend.de" textOverrun="CLIP" underline="true" visited="true">
+        <VBox.margin>
+            <Insets left="-3.0"/>
+        </VBox.margin>
+    </Hyperlink>
+
+    <Label fx:id="lbFounderCredit"  text="Who invented it?!" layoutX="523" layoutY="556" />
+
+
+    <VBox layoutX="13.0" layoutY="450.0" prefHeight="230.0" prefWidth="500.0">
+
+        <TextFlow>
+            <Label minWidth="40.0" prefHeight="30.0" text="Copyright 2011 - "/>
+            <Label fx:id="lblCopyrightYear" prefHeight="30.0" text="YEAR"/>
+            <Label minWidth="30.0" prefHeight="30.0" text=" Weigend Asset Management. All rights reserved."/>
+        </TextFlow>
+
+        <GridPane id="systemInfoPane">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="100.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+
+            <rowConstraints>
+                <RowConstraints minHeight="30.0" maxHeight="30.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="26.0" maxHeight="26.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="26.0" maxHeight="26.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="26.0" maxHeight="26.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="26.0" maxHeight="26.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="26.0" maxHeight="26.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="26.0" maxHeight="26.0" vgrow="NEVER"/>
+            </rowConstraints>
+
+            <!-- line 0 -->
+            <Label styleClass="systemInfoLabel" text="Product Version" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <Label styleClass="systemInfoValue" fx:id="lblProductVersion" text="Product" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+            <!-- line 1 -->
+            <Label styleClass="systemInfoLabel" text="Revision" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <Label styleClass="systemInfoValue" text="REVISION" fx:id="lblRevision" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+            <!-- line 2 -->
+            <Label styleClass="systemInfoLabel" text="Build Date &amp; Time" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <Label styleClass="systemInfoValue" text="DATE" fx:id="lblBuildDate" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+            <!-- line 3 -->
+            <Label styleClass="systemInfoLabel" text="License" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+            <Label styleClass="systemInfoValue" text="LICENSE" fx:id="lblLicense" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+            <!-- line 4 -->
+            <Label styleClass="systemInfoLabel" text="Java Runtime" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+            <Label styleClass="systemInfoValue" id="lblJavaVersion" fx:id="lblRuntimeVersion" text="Runtime Version" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+            <!-- line 5 -->
+            <Label styleClass="systemInfoLabel" text="Java Version" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+            <Label styleClass="systemInfoValue" fx:id="lblJavaVersion" text="Java Version" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+            <!-- line 6 -->
+            <Label styleClass="systemInfoLabel" text="System" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+            <Label styleClass="systemInfoValue" fx:id="lblSystemVersion" text="System" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+        </GridPane>
+    </VBox>
+
+</Pane>

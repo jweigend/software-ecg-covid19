@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>ekg-awb-application</artifactId>
+        <groupId>de.qaware.ekg.awb</groupId>
+        <version>6.2.3-COVID-EDITION-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>awb-application-base</artifactId>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>de.qaware.ekg.awb</groupId>
+            <artifactId>ekg-awb-commons</artifactId>
+            <version>6.2.3-COVID-EDITION-SNAPSHOT</version>
+        </dependency>
+
+        <!-- other EKG modules we will bundle to a complete application -->
+        <dependency>
+            <groupId>de.qaware.ekg.awb</groupId>
+            <artifactId>ekg-awb-metricanalyzer-ui</artifactId>
+            <version>6.2.3-COVID-EDITION-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>de.qaware.ekg.awb</groupId>
+            <artifactId>ekg-awb-repository-bl</artifactId>
+            <version>6.2.3-COVID-EDITION-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>de.qaware.ekg.awb</groupId>
+            <artifactId>ekg-awb-repository-ui</artifactId>
+            <version>6.2.3-COVID-EDITION-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>de.qaware.ekg.awb</groupId>
+            <artifactId>ekg-awb-repository-api</artifactId>
+            <version>6.2.3-COVID-EDITION-SNAPSHOT</version>
+        </dependency>
+
+        <!-- Data Access modules for Solr -->
+        <dependency>
+            <groupId>de.qaware.ekg.awb</groupId>
+            <artifactId>ekg-awb-da-solr</artifactId>
+            <version>6.2.3-COVID-EDITION-SNAPSHOT</version>
+        </dependency>
+        <!-- Elasticsearch disabled due to dependency conflicts with Solr 9.x
+        <dependency>
+            <groupId>de.qaware.ekg.awb</groupId>
+            <artifactId>ekg-awb-da-elasticsearch</artifactId>
+            <version>6.2.3-COVID-EDITION-SNAPSHOT</version>
+        </dependency>
+        -->
+
+        <dependency>
+            <groupId>de.qaware.ekg.awb</groupId>
+            <artifactId>ekg-awb-project</artifactId>
+            <version>6.2.3-COVID-EDITION-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.controlsfx</groupId>
+            <artifactId>controlsfx</artifactId>
+        </dependency>
+
+        <!-- Stagediver FX window management -->
+        <dependency>
+            <groupId>de.qaware.stagediver.fx</groupId>
+            <artifactId>platform-runner</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.qaware.stagediver.fx.extensions</groupId>
+            <artifactId>cdi-contexts</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.qaware.stagediver.fx.extensions</groupId>
+            <artifactId>ui-utils</artifactId>
+            <version>${stagediverFx.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>de.qaware.stagediver.fx</groupId>
+            <artifactId>windowmanager-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.qaware.stagediver.fx</groupId>
+            <artifactId>windowmanager-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.qaware.stagediver.fx</groupId>
+            <artifactId>platform-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.qaware.stagediver.fx</groupId>
+            <artifactId>platform-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.qaware.stagediver.fx</groupId>
+            <artifactId>lookup-cdi</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.qaware.stagediver.fx</groupId>
+            <artifactId>lookup</artifactId>
+        </dependency>
+
+        <!-- CDI lifecycle/dependency management -->
+        <dependency>
+            <groupId>org.jboss.weld.se</groupId>
+            <artifactId>weld-se-core</artifactId>
+        </dependency>
+
+        <!-- Logging implementation for runtime -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4jVersion}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- Apache Batik for SVG icon loading -->
+        <dependency>
+            <groupId>org.apache.xmlgraphics</groupId>
+            <artifactId>batik-bridge</artifactId>
+        </dependency>
+
+        <!-- COVID-19 Data Importer -->
+        <dependency>
+            <groupId>de.qaware.ekg.awb.importer</groupId>
+            <artifactId>ekg-awb-importer-owid-covid-online</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>build.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>build.properties</exclude>
+                </excludes>
+            </resource>
+        </resources>
+    </build>
+
+    <!--
+    COVID fallback data is now stored in src/main/resources/covid-fallback-data.csv
+    Download plugin removed - update the file manually from:
+    https://github.com/owid/covid-19-data/blob/master/public/data/owid-covid-data.csv
+    -->
+
+</project>

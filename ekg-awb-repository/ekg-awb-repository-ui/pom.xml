@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>ekg-awb-repository</artifactId>
+        <groupId>de.qaware.ekg.awb</groupId>
+        <version>6.2.3-COVID-EDITION-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>ekg-awb-repository-ui</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ekg-awb-repository-bl</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ekg-awb-common-ui-misc</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- provides ExplorerUpdateEvent type that is used than a project has changed -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ekg-awb-common-ui-explorer</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>de.qaware.stagediver.fx</groupId>
+            <artifactId>platform-api</artifactId>
+        </dependency>
+
+        <!-- used to check Repository URLs -->
+        <dependency>
+            <groupId>commons-validator</groupId>
+            <artifactId>commons-validator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.afester.javafx</groupId>
+            <artifactId>FranzXaver</artifactId>
+        </dependency>
+
+
+        <!-- test dependencies -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ekg-awb-common-ui-misc</artifactId>
+            <version>${project.version}</version>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
+</project>

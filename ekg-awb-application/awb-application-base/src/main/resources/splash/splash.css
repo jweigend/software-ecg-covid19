@@ -1,0 +1,21 @@
+.splash-progress-bar {
+    -fx-background-radius: 5px;
+    -fx-arc-height: 6px;
+}
+
+.splash-progress-bar .track{
+    -fx-background-color: green;
+    -fx-background-insets: 20;
+    -fx-background-radius: 6, 6, 6, 6;
+}
+
+.splash-progress-bar .bar {
+    -fx-background-color: grey;
+    -fx-background-insets: 30, 30, 30, 30;
+    -fx-background-radius: 4, 4, 4, 4;
+}
+
+.splash-progress-text {
+    -fx-text-fill: #4b4a4b;
+    -fx-label-padding: 5px;
+}

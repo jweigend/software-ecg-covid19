@@ -1,0 +1,91 @@
+#!/bin/bash
+
+
+# function 'stub_logger()'
+#
+# A logger which logs to the macOS Console.app using the 'syslog' command
+#
+# @param1  the log message
+# @return  void
+################################################################################
+function stub_logger() {
+	syslog -s -k \
+		Facility com.apple.console \
+		Level Notice \
+		Sender "$(basename "$0")" \
+		Message "[$$][${CFBundleName:-$(basename "$0")}] $1"
+}
+
+
+
+# set the directory abspath of the current
+# shell script with symlinks being resolved
+############################################
+
+PRG=$0
+while [ -h "$PRG" ]; do
+	ls=$(ls -ld "$PRG")
+	link=$(expr "$ls" : '^.*-> \(.*\)$' 2>/dev/null)
+	if expr "$link" : '^/' 2> /dev/null >/dev/null; then
+		PRG="$link"
+	else
+		PRG="$(dirname "$PRG")/$link"
+	fi
+done
+PROGDIR=$(dirname "$PRG")
+stub_logger "[StubDir] $PROGDIR"
+
+
+
+# set files and folders
+############################################
+
+# the absolute path of the app package
+cd "$PROGDIR"/../../ || exit 11
+AppPackageFolder=$(pwd)
+
+BUNDLE_PATH="${AppPackageFolder}"/Contents
+
+# Use bundled JDK if available and working, otherwise use system JAVA_HOME or java in PATH
+if [ -x "$BUNDLE_PATH/jdk/bin/java" ] && "$BUNDLE_PATH/jdk/bin/java" -version >/dev/null 2>&1; then
+    export JAVA_HOME="$BUNDLE_PATH/jdk"
+elif [ -n "$JAVA_HOME" ] && [ -x "$JAVA_HOME/bin/java" ]; then
+    stub_logger "Using system JAVA_HOME: $JAVA_HOME"
+else
+    JAVA_CMD=$(which java 2>/dev/null)
+    if [ -n "$JAVA_CMD" ]; then
+        export JAVA_HOME=$(dirname "$(dirname "$JAVA_CMD")")
+        stub_logger "Using java from PATH: $JAVA_HOME"
+    else
+        stub_logger "ERROR: No Java installation found"
+        exit 1
+    fi
+fi
+
+export EKG_CONFIG="$BUNDLE_PATH/configs"
+export JRE_HOME="$JAVA_HOME"
+
+# Build JavaFX module path from libs directory (only javafx jars)
+JAVAFX_MODULES=""
+while IFS= read -r -d '' jar; do
+    if [ -z "$JAVAFX_MODULES" ]; then
+        JAVAFX_MODULES="$jar"
+    else
+        JAVAFX_MODULES="$JAVAFX_MODULES:$jar"
+    fi
+done < <(find "$BUNDLE_PATH/libs" -maxdepth 1 -name 'javafx-*.jar' -print0 2>/dev/null)
+
+"$JAVA_HOME/bin/java" \
+    -Xdock:icon="$BUNDLE_PATH/Resources/ekg-logo-ico.icns" \
+    -Xdock:name="Software-EKG 6.2.3" \
+    --add-opens javafx.controls/javafx.scene.control=ALL-UNNAMED \
+    --add-opens javafx.graphics/javafx.scene=ALL-UNNAMED \
+    --add-opens javafx.graphics/com.sun.javafx.application=ALL-UNNAMED \
+    --add-opens java.base/java.lang.reflect=ALL-UNNAMED \
+    --add-opens java.base/java.lang=ALL-UNNAMED \
+    --module-path "$JAVAFX_MODULES" \
+    --add-modules=javafx.controls,javafx.fxml,javafx.swing \
+    -Dekg.solr.baseDir="$BUNDLE_PATH/solr" \
+    -Xmx8G \
+    -classpath "$BUNDLE_PATH/libs/*" \
+    de.qaware.ekg.awb.application.base.EkgCdiApplication

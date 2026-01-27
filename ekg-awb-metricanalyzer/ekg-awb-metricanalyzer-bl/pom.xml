@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.qaware.ekg.awb</groupId>
+        <artifactId>ekg-awb-metricanalyzer</artifactId>
+        <version>6.2.3-COVID-EDITION-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>ekg-awb-metricanalyzer-bl</artifactId>
+    <packaging>jar</packaging>
+
+    <description>
+        Software-EKG - MetricAnalyzer Business Logic
+        Module that implements the core domain functionality of Software-EKG by providing nearly anything that is
+        need to analyze time series: chart backend, query services, powerful computing logic like aggregations and
+        import/export services.
+    </description>
+
+    <dependencies>
+
+        <!-- persistence layer api the module uses to read and write time-series data -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ekg-awb-repository-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- common ekg components/utils we use for example CDI lookup or the event bus -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ekg-awb-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- every module with business logic need project because this gives the context of all actions -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ekg-awb-project</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-math3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-math3</artifactId>
+            <version>3.6.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.carrotsearch/hppc -->
+        <dependency>
+            <groupId>com.carrotsearch</groupId>
+            <artifactId>hppc</artifactId>
+            <version>0.8.1</version>
+        </dependency>
+
+    </dependencies>
+</project>

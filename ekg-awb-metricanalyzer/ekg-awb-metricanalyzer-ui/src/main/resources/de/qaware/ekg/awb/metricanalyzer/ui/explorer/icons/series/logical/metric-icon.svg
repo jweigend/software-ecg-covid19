@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2018 (64 Bit) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="4mm" height="4mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 400 400"
+ >
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str1 {stroke:#CC6633;stroke-width:18.9;stroke-miterlimit:22.9256}
+    .str0 {stroke:white;stroke-width:0.2;stroke-miterlimit:22.9256}
+    .fil0 {fill:none}
+    .fil1 {fill:#AD5B32}
+   ]]>
+  </style>
+ </defs>
+ <g id="Ebene_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <rect class="fil0 str0" x="4.52" y="32.41" width="390.99" height="352.37"/>
+  <rect class="fil0 str1" x="44.16" y="67.18" width="307.24" height="290.6" rx="21.87" ry="23.22"/>
+  <rect class="fil1" x="75.98" y="254.8" width="46.96" height="65.53"/>
+  <rect class="fil1" x="140.05" y="175.22" width="46.96" height="145.07"/>
+  <rect class="fil1" x="203.98" y="112.3" width="46.96" height="208.15"/>
+  <rect class="fil1" x="268.3" y="186.24" width="46.96" height="134.2"/>
+ </g>
+</svg>

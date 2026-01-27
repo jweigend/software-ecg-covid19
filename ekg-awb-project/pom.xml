@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>de.qaware.ekg.awb</groupId>
+        <artifactId>ekg-awb-covid-edition</artifactId>
+        <version>6.2.3-COVID-EDITION-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>ekg-awb-project</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ekg-awb-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- use to get glue code saver like Bindings class -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ekg-awb-common-ui-misc</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- provides ExplorerUpdateEvent type that is used than a project has changed -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ekg-awb-common-ui-explorer</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- provides the ProjectConfiguration datatype and accessor to read/write projects from persistence layer -->
+        <dependency>
+            <groupId>de.qaware.ekg.awb</groupId>
+            <artifactId>ekg-awb-repository-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- provides the dialog to select repositories that will used for CreateProjectDialog -->
+        <dependency>
+            <groupId>de.qaware.ekg.awb</groupId>
+            <artifactId>ekg-awb-repository-ui</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- the importer SDK provides an API that is used by import modules and also this component -->
+        <dependency>
+            <groupId>de.qaware.ekg.awb</groupId>
+            <artifactId>ekg-awb-sdk</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>25.1-jre</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

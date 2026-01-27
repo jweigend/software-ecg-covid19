@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2018 (64 Bit) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="4mm" height="4mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 400 400"
+ >
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:white;stroke-width:0.2;stroke-miterlimit:22.9256}
+    .fil0 {fill:none}
+    .fil4 {fill:#8F8461;fill-rule:nonzero}
+    .fil5 {fill:#BFBAA5;fill-rule:nonzero}
+    .fil6 {fill:#CEC9AE;fill-rule:nonzero}
+    .fil1 {fill:#D9AD47;fill-rule:nonzero}
+    .fil3 {fill:#EBBA16;fill-rule:nonzero}
+    .fil2 {fill:#F4EFDC;fill-rule:nonzero}
+   ]]>
+  </style>
+ </defs>
+ <g id="Ebene_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <rect class="fil0 str0" x="4.52" y="32.41" width="390.99" height="352.37"/>
+  <path class="fil1" d="M306.19 330.3l-225.47 0c-5.19,0 -8.98,-4.94 -7.63,-9.94l51.22 -140.4c0.93,-3.44 4.05,-5.83 7.63,-5.83l225.46 0c5.2,0 7.61,4.94 7.61,9.94l-51.21 140.4c-0.91,3.45 -4.03,5.83 -7.6,5.83zm0 0z"/>
+  <path class="fil2" d="M124.31 179.96c0.93,-3.44 4.05,-5.83 7.63,-5.83l207.87 0 0 -35.27 -221.66 0 -30.23 30.23 0 110.6 36.39 -99.73zm0 0z"/>
+  <path class="fil3" d="M191.55 118.71l-17.98 -25.19 -92.02 0c-4.83,0 -8.73,3.91 -8.73,8.74l0 215.22c0.34,0.03 0.68,0.06 1.03,0.06l14.07 -38.37 0 -110.08 10.08 -10.08 0 -40.29 93.55 0zm0 0z"/>
+  <path class="fil4" d="M98.01 118.71l0 40.29 21.52 -20.15 217.8 0.4 0.01 34.83 8.01 0 0.18 -35.23 0 -20.15 -247.52 0zm0 0z"/>
+  <polygon class="fil5" points="213.86,174.13 223.95,174.13 223.95,164.04 213.86,164.04 "/>
+  <polygon class="fil5" points="249.14,174.13 259.23,174.13 259.23,164.04 249.14,164.04 "/>
+  <polygon class="fil5" points="284.42,174.13 294.48,174.13 294.48,164.04 284.42,164.04 "/>
+  <polygon class="fil5" points="143.34,174.13 153.43,174.13 153.43,164.04 143.34,164.04 "/>
+  <polygon class="fil5" points="178.62,174.13 188.68,174.13 188.68,164.04 178.62,164.04 "/>
+  <path class="fil6" d="M118.15 169.08l0 -30.23 -30.23 30.23 30.23 0zm0 0z"/>
+ </g>
+</svg>

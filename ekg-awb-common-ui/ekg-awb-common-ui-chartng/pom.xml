@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>ekg-awb-common-ui</artifactId>
+        <groupId>de.qaware.ekg.awb</groupId>
+        <version>6.2.3-COVID-EDITION-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>ekg-awb-common-ui-chartng</artifactId>
+
+
+    <description>Chart NextGeneration (NG) is a JavaFX chart component based on the 2017er custom zoomable
+    stacked chart implementation. The chart was initial inspired by JFree chart for Swing. But mean while it is much
+    more powerful especially with it's concept of stacking chart with different y-axis scale. In contrast to previous
+    versions the commons Chart NG isn't (pseudo) fully generic anymore. Instead a long (timestamp) on x-axis and
+    double (value) is fixed part of the component to clarify it's focus on time series.</description>
+
+
+    <!-- only an minimal set of dependencies to the other common components are required -->
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ekg-awb-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ekg-awb-common-ui-misc</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+
+</project>

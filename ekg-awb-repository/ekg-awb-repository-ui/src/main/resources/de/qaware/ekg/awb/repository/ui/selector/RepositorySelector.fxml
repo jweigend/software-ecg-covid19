@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import de.qaware.ekg.awb.repository.ui.selector.RepositorySelectorPane?>
+<?import java.net.URL?>
+<fx:root type="RepositorySelectorPane" xmlns:fx="http://javafx.com/fxml" minHeight="34" maxHeight="34"
+         fx:id="repositorySelector"  styleClass="repositorySelectorPane">
+
+    <columnConstraints>
+        <ColumnConstraints halignment="LEFT"  hgrow="ALWAYS"/>
+        <ColumnConstraints halignment="LEFT"  hgrow="ALWAYS"/>
+    </columnConstraints>
+
+    <rowConstraints>
+        <RowConstraints minHeight="31" maxHeight="31" vgrow="NEVER" valignment="CENTER"/>
+    </rowConstraints>
+
+    <Label fx:id="repoLabel" styleClass="dialogLabel" text="${controller.label}" minWidth="50" maxHeight="Infinity" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+
+    <ComboBox fx:id="cbRepositorySelection" prefWidth="998" GridPane.columnIndex="1" GridPane.rowIndex="0" minWidth="100"
+               maxHeight="Infinity" promptText="- Please create a correct repository first -"/>
+
+    <stylesheets>
+        <URL value="@RepositorySelectorStyle.css"/>
+    </stylesheets>
+</fx:root>

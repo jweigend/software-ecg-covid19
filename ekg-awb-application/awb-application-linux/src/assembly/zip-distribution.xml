@@ -1,0 +1,80 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+
+    <id>awb-zip-distribution</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+
+
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <files>
+        <file>
+            <fileMode>0755</fileMode>
+            <outputDirectory />
+            <source>${basedir}/src/main/resources/distribution/start-software-ekg.sh</source>
+        </file>
+
+        <!-- Fallback data for OWID-COVID-Plugin (compressed) -->
+        <file>
+            <source>${basedir}/../awb-application-base/src/main/resources/covid-fallback-data.csv.gz</source>
+            <outputDirectory>data</outputDirectory>
+        </file>
+    </files>
+
+    <fileSets>
+
+        <fileSet>
+            <directory>${basedir}/../../ekg-awb-da/ekg-awb-da-solr/src/main/solr</directory>
+            <outputDirectory>solr</outputDirectory>
+            <includes>
+                <include>**/*</include>
+                <include>*</include>
+            </includes>
+        </fileSet>
+
+        <!-- JavaFX modules are now included in libs via dependencySet, no separate modules folder needed -->
+
+        <!-- Bundle the system JDK from JAVA_HOME -->
+        <fileSet>
+            <directory>${java.home}</directory>
+            <outputDirectory>jdk</outputDirectory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+            <excludes>
+                <exclude>bin/*</exclude>
+            </excludes>
+        </fileSet>
+
+        <fileSet>
+            <directory>${java.home}/bin</directory>
+            <outputDirectory>jdk/bin</outputDirectory>
+            <fileMode>0755</fileMode>
+            <includes>
+                <include>*</include>
+            </includes>
+        </fileSet>
+
+        <fileSet>
+            <directory>${basedir}/../awb-application-base/src/main/resources/distribution/configs</directory>
+            <outputDirectory>configs</outputDirectory>
+            <excludes>
+                <exclude>**/do_not_delete</exclude>
+            </excludes>
+        </fileSet>
+
+    </fileSets>
+
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>libs</outputDirectory>
+            <unpack>false</unpack>
+            <!-- JavaFX modules are now included in libs and loaded via module-path -->
+        </dependencySet>
+    </dependencySets>
+
+
+</assembly>

@@ -1,0 +1,65 @@
+#outerBorderPane {
+    -fx-padding: 2 15 0 15;
+    -fx-font-size: 14px;
+    -fx-font-family: Sengoe;
+    -fx-background-color: white;
+}
+
+.label {
+    -fx-text-fill: #606060;
+}
+
+#systemInfoPane {
+    -fx-spacing: 5;
+}
+
+.systemInfoLabel {
+    -fx-font-size: 12;
+}
+
+.systemInfoValue{
+    -fx-font-size: 12;
+    -fx-text-fill: #222222;
+}
+
+#linkHomepage {
+    -fx-text-fill: #145180;
+    -fx-border-style: none;
+    -fx-border-color: white;
+}
+
+.grid {
+    -fx-padding: 100;
+    -fx-hgap: 200;
+    -fx-vgap: 10;
+}
+
+#lbFounderCredit {
+    -fx-border-color: #c7d3da;
+    -fx-background-color: #ecf2f9;
+    -fx-border-style: dashed;
+    -fx-pref-width: 212;
+    -fx-min-width: 212;
+    -fx-alignment: center;
+}
+
+#lbFounderCredit:hover {
+    -fx-background-color: #dae0e7;
+}
+
+
+#lbFounderCredit:pressed {
+    -fx-background-color: #b0cfe7;
+}
+
+#lbJWE {
+    -fx-background-color: rgba(255, 255, 255, 0.76);
+    -fx-translate-y: 410;
+    -fx-translate-x: 60;
+}
+
+#lbSKR {
+    -fx-background-color: rgba(255, 255, 255, 0.76);
+    -fx-translate-y: 410;
+    -fx-translate-x: 500;
+}

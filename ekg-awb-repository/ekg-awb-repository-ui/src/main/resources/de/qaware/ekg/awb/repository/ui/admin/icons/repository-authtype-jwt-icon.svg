@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2018 (64 Bit) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="4mm" height="4mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 400 400"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#C5C6C6;stroke-width:0;stroke-miterlimit:22.9256}
+    .str1 {stroke:white;stroke-width:0;stroke-miterlimit:22.9256}
+    .fil5 {fill:none}
+    .fil2 {fill:#00B9F1}
+    .fil1 {fill:#00F2E6}
+    .fil3 {fill:#D63AFF}
+    .fil4 {fill:#FB015B}
+    .fil0 {fill:white}
+   ]]>
+  </style>
+ </defs>
+ <g id="Ebene_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polygon class="fil0 str0" points="215.77,132.12 215.77,62.88 177.15,62.88 177.15,132.12 196.46,158.64 "/>
+  <polygon class="fil0 str0" points="177.15,251.05 177.15,320.3 215.77,320.3 215.77,251.05 196.46,224.54 "/>
+  <polygon class="fil1" points="215.77,251.05 256.44,307.17 287.84,284.26 246.91,228.4 215.77,218.1 "/>
+  <polygon class="fil1" points="177.15,132.12 136.48,76 105.07,98.92 146.01,154.78 177.15,165.07 "/>
+  <polygon class="fil2" points="146.01,154.78 80.1,133.41 68.01,170.22 133.91,191.59 165.31,181.55 "/>
+  <polygon class="fil2" points="227.61,201.63 246.91,228.4 312.82,249.76 324.91,212.95 259.01,191.59 "/>
+  <polygon class="fil3" points="259.01,191.59 324.91,170.22 312.82,133.41 246.91,154.78 227.61,181.55 "/>
+  <polygon class="fil3" points="133.91,191.59 68.01,212.95 80.1,249.76 146.01,228.4 165.31,201.63 "/>
+  <polygon class="fil4" points="146.01,228.4 105.07,284.26 136.48,307.17 177.15,251.05 177.15,218.1 "/>
+  <polygon class="fil4" points="246.91,154.78 287.84,98.92 256.44,76 215.77,132.12 215.77,165.07 "/>
+  <rect class="fil5 str1" x="0.21" y="0.64" width="399.57" height="399.14"/>
+ </g>
+</svg>

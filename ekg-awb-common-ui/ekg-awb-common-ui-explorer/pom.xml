@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.qaware.ekg.awb</groupId>
+        <artifactId>ekg-awb-common-ui</artifactId>
+        <version>6.2.3-COVID-EDITION-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>ekg-awb-common-ui-explorer</artifactId>
+    <packaging>jar</packaging>
+
+    <description>Module that contains an explorer component based on a JavaFX tree
+        implementation with a lot of extra</description>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>de.qaware.ekg.awb</groupId>
+            <artifactId>ekg-awb-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>de.qaware.ekg.awb</groupId>
+            <artifactId>ekg-awb-common-ui-misc</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

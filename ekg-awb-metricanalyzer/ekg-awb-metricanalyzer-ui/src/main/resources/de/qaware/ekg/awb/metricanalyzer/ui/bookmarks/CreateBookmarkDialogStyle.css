@@ -1,0 +1,37 @@
+
+
+#contentGridPane {
+    -fx-vgap: 8;
+    -fx-padding: 14 14 0 14;
+
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #dbdbdb;
+}
+
+#contentGridPane .label {
+    -fx-min-width: 50;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #3184c8;
+    -fx-padding: 14 30 14 14;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: black;
+}
+
+.dialog-pane .header-panel .label  {
+    -fx-text-fill: #F7F7F7;
+}
+
+
+
+
+.applyButton {
+    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border,
+    linear-gradient(to bottom, ladder(lightgrey, #e1e9ee 75%, #e9eff6 80%), #d3dbe0);
+}
+
+.dialog-pane *.button-bar > *.container{
+      -fx-background-color: #ececec;
+    -fx-border-width: 1 0 0 0;
+}

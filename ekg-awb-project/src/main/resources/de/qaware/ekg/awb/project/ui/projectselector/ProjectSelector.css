@@ -1,0 +1,88 @@
+#cbProject:disabled .text-field {
+    -fx-prompt-text-fill: rgb(93, 0, 0);
+    -fx-background-color: #e6e6e6;
+    -fx-effect: null;
+    -fx-opacity: 1.0 ;
+}
+
+#projectSelector {
+    -fx-padding: 5 0 0 0;
+}
+.projectCtrlPane {
+    -fx-padding: 0;
+    -fx-hgap: 10;
+    -fx-vgap: 10;
+}
+
+.projectCtrlPane .combo-box {
+    -fx-max-width: 99999;
+}
+
+.project-combobox:disabled .list-cell {
+    -fx-text-fill: #990000;
+    -fx-opacity: 0.9;
+}
+
+.project-selector-combobox {
+    -fx-fit-to-height: true;
+    -fx-pref-height: 32;
+}
+
+.ekgComboboxButtonCell {
+    -fx-fit-to-height: false;
+    -fx-padding: 0 0 0 6;
+}
+
+.ekgComboboxButtonCell:disabled {
+    -fx-text-fill: #666868;
+    -fx-opacity: 0.2;
+}
+
+
+.ekgComboboxListCell {
+    -fx-fit-to-height: false;
+}
+
+.ekgComboboxListCell:disabled {
+    -fx-text-fill: #666868;
+    -fx-opacity: 0.2;
+}
+
+.text-field:invalid  {
+    -fx-text-fill: #990000;
+  /*  -fx-background-color: yellow;*/
+    -fx-background-color: #990000,linear-gradient(to bottom, rgba(255, 217, 202, 0.9) 1%, rgba(255, 225, 213, 0.96) 55%);
+}
+
+#errorBubble .label {
+    -fx-background-color: #990000;
+    -fx-text-fill: white;
+    -fx-pref-height: 30;
+    -fx-pref-width: 469;
+    -fx-background-radius: 3;
+    -fx-alignment: center;
+}
+
+
+#errorBubble {
+    -fx-translate-y: -36;
+    -fx-translate-x: 0;
+}
+
+
+.dialogLabel {
+    -fx-padding: 0 0 0 2;
+}
+
+#gpNewProject > * {
+    -fx-max-height: Infinity;
+}
+
+ #btEditAliasSetting {
+     -fx-max-width: Infinity;
+     -fx-max-height: Infinity;
+     -fx-background-image: url(icons/edit-button-icon.png);
+     -fx-background-size:  24px 24px;
+     -fx-background-repeat: no-repeat;
+     -fx-background-position: center;
+ }

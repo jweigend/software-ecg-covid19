@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?scenebuilder-stylesheet splash.css?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import java.net.URL?>
+<Pane maxHeight="492.0" maxWidth="680.0" prefHeight="482.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.qaware.sdfx.platform.impl.ProgressController">
+
+    <stylesheets>
+        <URL value="@splash.css"/>
+    </stylesheets>
+
+    <ImageView id="splash.png" fitHeight="492.0" fitWidth="700.0" layoutX="-15.0" layoutY="-9.0">
+        <Image url="@../de/qaware/ekg/awb/application/base/about/logo-6.2.3-covid.png"/>
+    </ImageView>
+
+    <Label id="splash-progress-text" fx:id="progressText" blendMode="HARD_LIGHT" layoutX="35.0" layoutY="390.0"
+           prefWidth="562.0" styleClass="splash-progress-text" text="Loading..." wrapText="true"/>
+
+    <ProgressBar id="splash-progress-bar" fx:id="progressBar" layoutX="40.0" layoutY="414.0" prefWidth="360.0" prefHeight="6"
+                 progress="0.01" styleClass="splash-progress-bar"/>
+
+
+</Pane>

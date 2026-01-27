@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.util.converter.*?>
+<fx:root type="javafx.scene.layout.GridPane" xmlns:fx="http://javafx.com/fxml" prefWidth="250" hgap="5.0" vgap="5.0">
+    <columnConstraints>
+        <ColumnConstraints hgrow="NEVER" minWidth="95.0" prefWidth="${controller.labelWidth}"/>
+        <ColumnConstraints hgrow="ALWAYS"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+    </rowConstraints>
+    <padding>
+        <Insets bottom="0.0" left="0.0" right="0.0" top="0.0"/>
+    </padding>
+    <Label text="Log Time Zone" visible="${controller.timeZoneVisible}" prefWidth="${controller.labelWidth}"
+           maxWidth="${controller.labelWidth}"/>
+    <ComboBox fx:id="cbxTimeZone" visible="${controller.timeZoneVisible}" GridPane.columnIndex="1"/>
+    <Label text="Year Correction" visible="${controller.yearCorrectionVisible}" GridPane.rowIndex="1"
+           prefWidth="${controller.labelWidth}"
+           maxWidth="${controller.labelWidth}"/>
+    <Spinner fx:id="yearCorrection" editable="true" GridPane.rowIndex="1" GridPane.columnIndex="1">
+        <valueFactory>
+            <SpinnerValueFactory.IntegerSpinnerValueFactory max="2100" min="1970">
+                <converter>
+                    <IntegerStringConverter/>
+                </converter>
+            </SpinnerValueFactory.IntegerSpinnerValueFactory>
+        </valueFactory>
+    </Spinner>
+</fx:root>

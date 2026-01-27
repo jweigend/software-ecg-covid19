@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?> 
+<DialogPane xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1"
+            headerText="Choose a name for the bookmark that represents the currently displayed data." minWidth="340" maxWidth="340" minHeight="190">
+
+    <content>
+        <GridPane hgap="5.0" vgap="5.0" id="contentGridPane">
+            <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" prefWidth="2"/>
+                <ColumnConstraints hgrow="NEVER" maxWidth="45" minWidth="50" />
+                <ColumnConstraints hgrow="NEVER" minWidth="1" maxWidth="1"/>
+                <ColumnConstraints hgrow="ALWAYS"  />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES" prefHeight="36" />
+                <RowConstraints vgrow="ALWAYS" />
+            </rowConstraints>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+
+            <Label text="Name:" GridPane.columnIndex="1" GridPane.rowIndex="0" alignment="CENTER_RIGHT" textAlignment="RIGHT" />
+            <TextField GridPane.columnIndex="3" GridPane.rowIndex="0" fx:id="bookmarkGroupName" GridPane.hgrow="ALWAYS" maxWidth="999"   />
+
+        </GridPane>
+    </content>
+
+    <ButtonType fx:constant="APPLY"/>
+    <ButtonType fx:constant="CANCEL"/>
+
+    <stylesheets>
+        <URL value="@CreateBookmarkGroupDialogStyle.css"/>
+    </stylesheets>
+
+</DialogPane>

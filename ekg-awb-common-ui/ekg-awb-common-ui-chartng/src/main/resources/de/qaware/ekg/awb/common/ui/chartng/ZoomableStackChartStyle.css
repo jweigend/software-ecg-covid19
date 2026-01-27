@@ -1,0 +1,94 @@
+
+/*
+style the StackPane that represents the whole ZoomableStackChart
+(the wrapping container)
+*/
+.zoomableChart {
+
+}
+
+
+
+.superSizedAxis .axis-label {
+    -fx-font-scale: 2;
+}
+
+.whiteAxis .axis-label {
+    -fx-text-fill: #f6f6f6;
+}
+
+.whiteAxis .axis-tick-mark {
+    -fx-stroke: #f6f6f6;
+}
+
+.whiteAxis .axis-minor-tick-mark {
+    -fx-stroke: #f6f6f6;
+}
+
+.whiteAxis .axis {
+    -fx-tick-label-fill: #f6f6f6;
+    -fx-stroke: #f6f6f6;
+}
+
+.whiteAxis .chart-vertical-grid-lines {
+    -fx-stroke: rgba(219, 219, 219, 0.50);
+}
+
+.whiteAxis .chart-horizontal-grid-lines {
+    -fx-stroke: rgba(219, 219, 219, 0.50);
+}
+
+
+
+/*
+.zoomableChart .axis-label {
+    -fx-font-size: 1;
+    -fx-legend-visible: false;
+}
+
+.zoomableChart .axis {
+    -fx-tick-label-font:  22 "Arial";
+}
+*/
+
+/* style the background of base chart */
+.zoomableChart .chart-plot-background {
+    -fx-background-color: transparent;
+}
+
+/* style the series rendered in base and background charts */
+.zoomableChart .chart-series-line {
+    -fx-stroke-width: 1px;
+}
+
+.zoomableChart .chart-series-line:selected {
+    -fx-stroke-width: 3px;
+}
+
+.zoomableChart .chart-series-area-line:selected {
+    -fx-stroke-width: 3px;
+}
+
+.zoomableChart .backgroundChart {
+    -fx-horizontal-grid-lines-visible: false;
+    -fx-horizontal-zero-line-visible: false;
+    -fx-vertical-grid-lines-visible: false;
+    -fx-vertical-zero-line-visible: false;
+}
+
+.zoomableChart .backgroundChart .chart-plot-background {
+    -fx-background-color: transparent;
+}
+
+
+LineChart {
+    -fx-create-symbols: false;
+}
+
+AreaChart {
+    -fx-create-symbols: false;
+}
+
+StackedAreaChart {
+    -fx-create-symbols: false;
+}

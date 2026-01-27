@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<fx:root type="javafx.scene.layout.GridPane" xmlns:fx="http://javafx.com/fxml"
+         fx:controller="de.qaware.ekg.awb.project.ui.projectbar.ProjectBarController" id="projectBar" disable="true">
+
+    <rowConstraints>
+        <RowConstraints minHeight="32.0" maxHeight="32.0" vgrow="NEVER"/>
+    </rowConstraints>
+
+    <columnConstraints>
+        <!-- 0 -->
+        <ColumnConstraints halignment="LEFT" minWidth="10" maxWidth="10" hgrow="NEVER"/>
+
+        <!-- 1,2 -->
+        <!-- project id label -->
+        <ColumnConstraints halignment="LEFT" minWidth="134" maxWidth="134" hgrow="NEVER"/>
+        <ColumnConstraints halignment="LEFT" minWidth="210" maxWidth="210" hgrow="NEVER"/>
+
+        <!-- 3,4 -->
+        <!--  label sources time series -->
+        <ColumnConstraints halignment="LEFT" minWidth="135" maxWidth="135" hgrow="NEVER"/>
+        <ColumnConstraints halignment="LEFT" minWidth="140" maxWidth="140" hgrow="NEVER"/>
+
+        <!-- 5,6 -->
+        <!-- cloud platform label -->
+        <ColumnConstraints halignment="LEFT" minWidth="102" maxWidth="102" hgrow="NEVER"/>
+        <ColumnConstraints halignment="LEFT" minWidth="140" maxWidth="140" hgrow="NEVER"/>
+
+        <!-- 7,8 -->
+        <!-- view flavor -->
+        <ColumnConstraints halignment="LEFT" minWidth="100" maxWidth="100" hgrow="NEVER"/>
+        <ColumnConstraints halignment="LEFT" minWidth="250" maxWidth="250" hgrow="NEVER"/>
+
+        <!-- 9,10 -->
+        <ColumnConstraints halignment="LEFT" minWidth="20" maxWidth="20" hgrow="NEVER"/>
+        <ColumnConstraints halignment="LEFT" minWidth="140" maxWidth="240" hgrow="NEVER"/>
+    </columnConstraints>
+
+    <stylesheets>
+        <URL value="@/de/qaware/ekg/awb/project/ui/projectbar/ProjectBarView.css"/>
+    </stylesheets>
+
+
+    <Label text="Selected project:" GridPane.columnIndex="1" GridPane.rowIndex="0"  />
+    <HBox spacing="10" maxHeight="Infinity" alignment="CENTER_LEFT" GridPane.columnIndex="2" GridPane.rowIndex="0">
+        <Button fx:id="btnEditProject" text=" "  />
+        <Label fx:id="lbProjectId" text="No project selected" prefWidth="160" styleClass="highlighted" translateX="-8" />
+    </HBox>
+
+    <Label text="Data source for time series:" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+    <Label fx:id="lbProjectType"  GridPane.columnIndex="4" GridPane.rowIndex="0" styleClass="highlighted" />
+
+    <Label text="Cloud platform:" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+    <Label fx:id="lbPlatformFlavor" GridPane.columnIndex="6" GridPane.rowIndex="0" styleClass="highlighted" />
+
+
+    <Label text="Select view:" GridPane.columnIndex="7" GridPane.rowIndex="0"  />
+    <ComboBox fx:id="cbViewFlavor" GridPane.columnIndex="8" GridPane.rowIndex="0" maxWidth="Infinity" />
+
+    <Button fx:id="btnImportDataToProject" GridPane.columnIndex="10" GridPane.rowIndex="0" text="Import data" translateY="-1" disable="true" />
+
+
+</fx:root>

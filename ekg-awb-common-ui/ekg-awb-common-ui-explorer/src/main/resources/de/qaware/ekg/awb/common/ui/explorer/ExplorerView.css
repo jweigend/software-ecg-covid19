@@ -1,0 +1,11 @@
+.tree-view {
+    -fx-fixed-cell-size: 26px;
+    -fx-font-size: 13;
+    -fx-padding: 1 1 1 23;
+}
+
+
+.tree-cell .text{
+    -fx-translate-x: 2;
+   /* -fx-font-style: italic; */
+}

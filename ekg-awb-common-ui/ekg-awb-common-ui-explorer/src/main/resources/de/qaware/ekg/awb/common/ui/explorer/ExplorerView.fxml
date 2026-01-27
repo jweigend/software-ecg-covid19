@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<BorderPane prefHeight="200.0" prefWidth="200.0" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="de.qaware.ekg.awb.common.ui.explorer.ExplorerController">
+    <center>
+        <TreeView fx:id="explorerTree" AnchorPane.bottomAnchor="0.0"
+                  AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+    </center>
+
+    <stylesheets>
+        <URL value="@ExplorerView.css"/>
+    </stylesheets>
+
+</BorderPane>

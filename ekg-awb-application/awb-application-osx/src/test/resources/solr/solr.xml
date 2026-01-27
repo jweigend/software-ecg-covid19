@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<solr>
+    <!-- This is a fake solr config to test the correct copy of a solr core into the app support dir of osx -->
+</solr>

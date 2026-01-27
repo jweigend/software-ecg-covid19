@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.control.ButtonType?>
+<?import java.net.URL?>
+<?import de.qaware.ekg.awb.sdk.importer.ui.controls.qdsselector.QuerySourceSelector?>
+<?import javafx.scene.layout.BorderPane?>
+<DialogPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="de.qaware.ekg.awb.project.ui.mgrdialog.ProjectEditDialogController"
+            minWidth="530" maxWidth="530" minHeight="520" maxHeight="520">
+
+
+    <content>
+        <GridPane id="contentGridPane">
+
+            <rowConstraints>
+                <!-- Row 0: project name error bubble / project section headline -->
+                <RowConstraints minHeight="31.0" maxHeight="31.0" vgrow="NEVER"/>
+                <!-- Row 1: project name-->
+                <RowConstraints minHeight="31.0" maxHeight="31.0" vgrow="NEVER"/>
+                <!-- Row 2: project flavor -->
+                <RowConstraints minHeight="31.0"  maxHeight="31.0"  vgrow="NEVER"/>
+                <!-- Row 3: project platform type -->
+                <RowConstraints minHeight="31.0" maxHeight="31.0" vgrow="NEVER"/>
+                <!-- Row 4: ImportRepository section header -->
+                <RowConstraints minHeight="31.0" maxHeight="31.0" vgrow="NEVER"/>
+                <!-- Row 5: QuerySourceSelector -->
+                <RowConstraints minHeight="180.0" maxHeight="180.0" vgrow="ALWAYS"/>
+            </rowConstraints>
+
+            <columnConstraints>
+                <ColumnConstraints halignment="LEFT" minWidth="150" maxWidth="150" hgrow="NEVER"/>
+                <ColumnConstraints hgrow="ALWAYS"/>
+                <ColumnConstraints halignment="RIGHT" minWidth="40" maxWidth="40" hgrow="NEVER"/>
+            </columnConstraints>
+
+            <!--
+            ==============================================================================================================================
+               section with UI controls/components that will used to edit/update EKG project attributes
+            ==============================================================================================================================
+            -->
+
+            <Label styleClass="lblHeadlines" text="Edit project properties:" GridPane.rowIndex="0" GridPane.columnSpan="3" />
+
+            <!-- project name -->
+            <Label styleClass="dialogLabel" labelFor="$null" id="txtProjectNameLabel" text="Project name:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+
+            <TextField id="projectName" fx:id="txtProjectName" promptText="Choose a distinct project name" editable="false"
+                       GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="2" />
+
+            <Group fx:id="warningIcon" visible="false" GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="2" translateX="-30" />
+
+            <Group fx:id="errorBubble" GridPane.rowIndex="1" GridPane.columnIndex="1"  GridPane.columnSpan="2">
+                <Label text="The project name has already been chosen!" maxWidth="352"  />
+                <SVGPath content="M 130 30 L 170 30 L 150 40 z" translateY="-1" fill="#990000" />
+            </Group>
+
+            <!-- project flavor -->
+            <Label styleClass="dialogLabel" labelFor="$null" id="txtProjectFlavorLabel" text="Kind of project:"
+                   GridPane.rowIndex="2" GridPane.columnIndex="0" />
+            <ComboBox fx:id="cbProjectFlavor" GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="2" />
+
+            <!-- project platform flavor -->
+            <Label styleClass="dialogLabel" labelFor="$null" id="txtPlatformFlavorLabel" text="Cloud platform type:"
+                    GridPane.rowIndex="3" GridPane.columnIndex="0" />
+            <ComboBox fx:id="cbCloudPlatformType" GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.columnSpan="2" />
+
+
+            <!--
+            ==============================================================================================================================
+               section with UI controls/components that will used to edit/update ImportSourceRepositories that belongs to the project
+            ============================================================================================================  ==================
+            -->
+
+            <Label styleClass="lblHeadlines" text="Edit connection details of external system:" GridPane.rowIndex="4" GridPane.columnSpan="3" />
+
+            <QuerySourceSelector fx:id="querySourceSelector" labelWidth="150" rowHeight="32"
+                                 GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.columnSpan="3" />
+
+            <BorderPane fx:id="bpSourceSelectorDisableOverlay" GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.columnSpan="3" >
+                <center>
+                    <Label text="This project does not use time series data from an external system."  />
+                </center>
+            </BorderPane>
+
+        </GridPane>
+    </content>
+
+
+    <!-- the button that will shown in the dialog -->
+    <ButtonType fx:constant="APPLY"/>
+    <ButtonType fx:constant="CANCEL"/>
+
+    <stylesheets>
+        <URL value="@ProjectDialogStyle.css"/>
+    </stylesheets>
+
+</DialogPane>
+

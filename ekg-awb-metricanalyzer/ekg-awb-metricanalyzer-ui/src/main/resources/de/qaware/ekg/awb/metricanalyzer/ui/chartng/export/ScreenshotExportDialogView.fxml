@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<DialogPane xmlns="http://javafx.com/javafx" fx:id="exportDialog"
+            fx:controller="de.qaware.ekg.awb.metricanalyzer.ui.chartng.export.ScreenshotExportController"
+            xmlns:fx="http://javafx.com/fxml" prefHeight="260.0" prefWidth="400.0">
+
+    <content>
+        <GridPane id="screenshotExportSettingGrid">
+            <columnConstraints>
+                <ColumnConstraints minWidth="80" maxWidth="80" halignment="LEFT" />
+                <ColumnConstraints hgrow="ALWAYS"/>
+                <ColumnConstraints minWidth="70" maxWidth="70" halignment="LEFT" hgrow="ALWAYS" />
+            </columnConstraints>
+
+            <rowConstraints>
+                <RowConstraints minHeight="36.0" maxHeight="36.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="36.0" maxHeight="36.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="36.0" maxHeight="36.0" vgrow="NEVER"/>
+            </rowConstraints>
+
+
+            <!-- export size selection -->
+            <Label styleClass="dialogLabel" text="Picture size:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+
+            <ComboBox fx:id="cbExportDimension" GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.columnSpan="2" />
+
+            <!-- background options of the exported image -->
+            <Label styleClass="dialogLabel" text="Background:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+            <ComboBox fx:id="cbBackgroundFill" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.columnSpan="2" />
+
+            <!-- file selection -->
+            <Label styleClass="dialogLabel" text="Save location:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+
+            <TextField fx:id="txtFilePath" GridPane.columnIndex="1" GridPane.rowIndex="2" prefHeight="32"/>
+
+            <Button fx:id="btnBrowse" GridPane.rowIndex="2" GridPane.columnIndex="2" mnemonicParsing="false"
+                    text="Browse..." prefHeight="32" />
+
+        </GridPane>
+    </content>
+
+    <stylesheets>
+        <URL value="@ScreenshotExportDialogStyle.css" />
+    </stylesheets>
+
+
+</DialogPane>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.qaware.ekg.awb</groupId>
+        <artifactId>ekg-awb-application</artifactId>
+        <version>6.2.3-COVID-EDITION-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>awb-application-win</artifactId>
+    <packaging>pom</packaging>
+
+    <description>Software-EKG AWB bundle module for Microsoft Windows systems</description>
+
+    <dependencies>
+
+        <!-- the awb application (base windows and all it's transitive modules) -->
+        <dependency>
+            <groupId>de.qaware.ekg.awb</groupId>
+            <artifactId>awb-application-base</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- implementation of DataAccess API this module currently use -->
+        <dependency>
+            <groupId>de.qaware.ekg.awb</groupId>
+            <artifactId>ekg-awb-da-solr</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- Elasticsearch disabled due to dependency conflicts with Solr 9.x
+        <dependency>
+            <groupId>de.qaware.ekg.awb</groupId>
+            <artifactId>ekg-awb-da-elasticsearch</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        -->
+
+        <!-- importer modules we want to integrate (dynamically linked in the UI) -->
+        <dependency>
+            <groupId>de.qaware.ekg.awb.importer</groupId>
+            <artifactId>ekg-awb-importer-owid-covid-online</artifactId>
+        </dependency>
+
+    </dependencies>
+
+
+    <build>
+        <finalName>Software-EKG_AWB_${ekgAwbReleaseVersion}_win64</finalName>
+        <plugins>
+
+            <!-- copy embedded Solr database to target directory to enable the start of AWB from local IDE -->
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <!-- here the phase you need -->
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir}/target/solr</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>../../ekg-awb-da/ekg-awb-da-solr/src/main/solr</directory>
+                                    <filtering>false</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>com.akathist.maven.plugins.launch4j</groupId>
+                <artifactId>launch4j-maven-plugin</artifactId>
+                <version>2.5.1</version>
+                <executions>
+                    <execution>
+                        <id>l4j-clui</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>launch4j</goal>
+                        </goals>
+                        <configuration>
+                            <headerType>gui</headerType>
+                            <!-- specify the jar location is mandatory -->
+                            <jar>./</jar>
+                            <!-- don't wrap our assembly inside the exe because we would able access the property files if we do that -->
+                            <dontWrapJar>true</dontWrapJar>
+                            <!-- sets the name of the exe file -->
+                            <outfile>${project.build.directory}/Software-EKG.exe</outfile>
+                            <!-- the icon what will shown in windows explorer or desktop/starmenu -->
+                            <icon>src/main/resources/software-ekg-awb.ico</icon>
+
+                            <!-- most important our classpath -->
+                            <classPath>
+                                <!-- the bootstrap class of ImageDB client -->
+                                <mainClass>de.qaware.ekg.awb.application.base.EkgCdiApplication</mainClass>
+                                <!-- add all jar to classpath that are in compile or runtime scope of this maven project -->
+                                <addDependencies>false</addDependencies>
+                                <!-- use the following directory as prefix for each jar in classpath -->
+                                <jarLocation>./libs</jarLocation>
+                                <!--
+                                After the automatically generated classpath is done, add the following to complete it.
+                                It will store the exploded imagedb-client-ui.jar to have the property files accessible.
+                                 -->
+                                <postCp>./libs/*</postCp>
+                            </classPath>
+                            <!--<icon>application.ico</icon-->
+                            <jre>
+                                <!-- use the bundled JRE to run the command -->
+                                <path>./jdk</path>
+
+                                <initialHeapSize>4024</initialHeapSize>
+                                <maxHeapSize>4024</maxHeapSize>
+
+                                <requiresJdk>true</requiresJdk>
+                                <opts>
+                                    <opt>--add-opens javafx.controls/javafx.scene.control=ALL-UNNAMED</opt>
+                                    <opt>--module-path ./modules</opt>
+                                    <opt>--add-modules=javafx.controls,javafx.fxml</opt>
+                                    <opt>-DEKG_CONFIG=./configs</opt>
+                                </opts>
+                            </jre>
+
+                            <versionInfo>
+                                <fileVersion>6.2.3.0</fileVersion>
+                                <txtFileVersion>6.2.3-COVID-EDITION</txtFileVersion>
+                                <fileDescription>${project.name}</fileDescription>
+                                <copyright>QAware 2019</copyright>
+                                <productVersion>6.2.3.0</productVersion>
+                                <txtProductVersion>6.2.3-COVID-EDITION</txtProductVersion>
+                                <productName>${project.name}</productName>
+                                <companyName>QAware</companyName>
+                                <internalName>software-ekg-awb</internalName>
+                                <originalFilename>Software-EKG.exe</originalFilename>
+                            </versionInfo>
+                            <disableVersionInfoDefaults>true</disableVersionInfoDefaults>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- bundle the EKG as exploded directory bundle -->
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptors>
+                        <descriptor>src/assembly/zip-distribution.xml</descriptor>
+                    </descriptors>
+                    <appendAssemblyId>false</appendAssemblyId>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+
+        </plugins>
+
+    </build>
+</project>

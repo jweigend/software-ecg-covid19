@@ -1,0 +1,11 @@
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.TextFlow?>
+<fx:root type="javafx.scene.layout.Pane" xmlns:fx="http://javafx.com/fxml">
+    <ScrollPane fx:id="areaScroll" onScroll="#scrolling">
+        <AnchorPane fx:id="areaContentHolder">
+            <TextFlow fx:id="areaContent" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"/>
+        </AnchorPane>
+    </ScrollPane>
+</fx:root>

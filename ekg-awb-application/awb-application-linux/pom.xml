@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>ekg-awb-application</artifactId>
+        <groupId>de.qaware.ekg.awb</groupId>
+        <version>6.2.3-COVID-EDITION-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>awb-application-linux</artifactId>
+
+    <packaging>pom</packaging>
+
+    <!-- profiles to build the native the EKG bundle with the correct native JavaFX libs -->
+    <profiles>
+        <profile>
+            <id>linux</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <javafx.platform>linux</javafx.platform>
+            </properties>
+        </profile>
+    </profiles>
+
+
+    <description>Software-EKG AWB bundle module for all Linux x64 systems</description>
+
+    <dependencies>
+
+        <!-- the awb application (base windows and all it's transitive modules) -->
+        <dependency>
+            <groupId>de.qaware.ekg.awb</groupId>
+            <artifactId>awb-application-base</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- implementation of DataAccess API this module currently use -->
+        <dependency>
+            <groupId>de.qaware.ekg.awb</groupId>
+            <artifactId>ekg-awb-da-solr</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- Elasticsearch disabled due to dependency conflicts with Solr 9.x
+        <dependency>
+            <groupId>de.qaware.ekg.awb</groupId>
+            <artifactId>ekg-awb-da-elasticsearch</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        -->
+
+        <!-- importer modules we want to integrate (dynamically linked in the UI) -->
+        <dependency>
+            <groupId>de.qaware.ekg.awb.importer</groupId>
+            <artifactId>ekg-awb-importer-owid-covid-online</artifactId>
+        </dependency>
+
+    </dependencies>
+
+
+    <build>
+        <finalName>Software-EKG_AWB_${ekgAwbReleaseVersion}_linux64</finalName>
+        <plugins>
+
+            <!-- copy embedded Solr database to target directory to enable the start of AWB from local IDE -->
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <!-- here the phase you need -->
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir}/target/solr</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>../../ekg-awb-da/ekg-awb-da-solr/src/main/solr</directory>
+                                    <filtering>false</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- bundle the EKG -->
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <!--
+                    <filters>
+                        <filter>src/assembly/filter.properties</filter>
+                    </filters>
+                    -->
+                    <descriptors>
+                        <descriptor>src/assembly/zip-distribution.xml</descriptor>
+                    </descriptors>
+
+                    <appendAssemblyId>false</appendAssemblyId>
+
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+
+    </build>
+</project>

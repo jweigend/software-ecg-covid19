@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2018 (64 Bit) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="4.5mm" height="3.18182mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 450 318.18"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:cc="http://creativecommons.org/ns#"
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+ xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+ inkscape:version="0.48.4 r9939"
+ sodipodi:docname="kubernetes-logo.svg"
+ inkscape:export-filename="/home/thockin/Downloads/kubernetes.png"
+ inkscape:export-xdpi="90"
+ inkscape:export-ydpi="90"
+ xmlns:svg="http://www.w3.org/2000/svg">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str3 {stroke:white;stroke-width:0.3;stroke-miterlimit:22.9256}
+    .str0 {stroke:#E6E6E6;stroke-width:3.79;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:22.9256}
+    .str1 {stroke:white;stroke-width:3.79;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:22.9256}
+    .str2 {stroke:white;stroke-width:2.27;stroke-miterlimit:22.9256;stroke-dasharray:4.545455 6.818182}
+    .fil0 {fill:none}
+    .fil1 {fill:white}
+   ]]>
+  </style>
+ </defs>
+ <g id="Kubernetes-Logo">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="0.53125" inkscape:cx="331.48702" inkscape:cy="500.20088" inkscape:document-units="px" inkscape:current-layer="layer1" showgrid="false" inkscape:window-width="1519" inkscape:window-height="822" inkscape:window-x="73" inkscape:window-y="27" inkscape:window-maximized="0" inkscape:snap-global="false" fit-margin-top="10" fit-margin-left="50" fit-margin-right="50" fit-margin-bottom="15"/>
+ </g>
+ <g id="Chart">
+  <metadata id="CorelCorpID_1Corel-Layer"/>
+  <path class="fil0 str0" d="M156.68 142.29c10.52,-9.02 21.05,-18.04 28.68,-21.55 7.63,-3.51 12.38,-1.5 15.82,2.26 3.44,3.76 5.58,9.27 8.07,10.79 2.49,1.52 5.33,-0.95 8.17,-3.42"/>
+  <path class="fil0 str1" d="M154.98 140.29c7.98,-10.22 15.97,-20.45 20.73,-22.72 4.76,-2.27 6.3,3.41 9.45,7.94 3.15,4.53 7.91,7.92 12.87,7.59 4.96,-0.33 10.12,-4.39 15.28,-8.45"/>
+  <path class="fil0 str2" d="M208.5 165.76l-59.42 -0.35 0 -75.76 75.76 0c0,25.25 -0.13,35.92 -0.13,61.18"/>
+  <rect class="fil1 str3" x="223.89" y="156.28" width="1.8" height="19.44"/>
+  <rect class="fil1 str3" x="215.02" y="164.9" width="19.64" height="1.7"/>
+ </g>
+</svg>

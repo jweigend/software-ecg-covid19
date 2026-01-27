@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local-project language="java" version="5.0.13433" xml-version="3" flavor="j2se">
+  <property name="show-as-module" value="true" />
+  <property name="publish-architecture-artifacts" value="true" />
+  <property name="force-classpath" value="false" />
+  <property name="project-type" value="maven" />
+  <property name="hide-externals" value="true" />
+  <property name="parse-archive-in-archive" value="false" />
+  <property name="include-injected-dependency" value="false" />
+  <property name="relative-to" value="const(THIS_FILE)" />
+  <property name="action-set-mod" value="1" />
+  <property name="detail-mode" value="true" />
+  <property name="hide-deprecated" value="false" />
+  <property name="resolve-name-clashes" value="true" />
+  <property name="project-excluded" />
+  <property name="show-needs-to-compile" value="false" />
+  <property name="show-poms" value="true" />
+  <property name="show-test-classes" value="false" />
+  <classpath>
+    <classpathentry kind="lib" path="ekg-awb-importer/ekg-awb-dimensionmapper/target/ekg-awb-dimensionmapper-6.1.0-SNAPSHOT-tests.jar" module="ekg-awb-dimensionmapper" />
+    <classpathentry kind="lib" path="ekg-awb-importer/target/ekg-awb-importer-6.1.0-SNAPSHOT-tests.jar" module="ekg-awb-importer" />
+    <classpathentry kind="lib" path="ekg-awb-importer/ekg-awb-importer-api/target/ekg-awb-importer-api-6.1.0-SNAPSHOT.jar" module="ekg-awb-importer-api" />
+    <classpathentry kind="lib" path="ekg-awb-metricanalyzer/target/ekg-awb-metricanalyzer-6.1.0-SNAPSHOT-tests.jar" module="ekg-awb-metricanalyzer" />
+    <classpathentry kind="lib" path="ekg-awb-importer/ekg-awb-importer-timesheet/target/ekg-awb-importer-timesheet-6.1.0-SNAPSHOT.jar" module="ekg-awb-importer-timesheet" />
+    <classpathentry kind="lib" path="ekg-awb-importer/ekg-awb-dimensionmapper/ekg-awb-dimensionmapper-svh/target/ekg-awb-dimensionmapper-svh-6.1.0-SNAPSHOT.jar" module="ekg-awb-dimensionmapper-svh" />
+    <classpathentry kind="lib" path="target/ekg-awb-6.1.0-SNAPSHOT-tests.jar" module="ekg-awb" />
+    <classpathentry kind="lib" path="ekg-awb-importer/ekg-awb-importer-chronix/target/ekg-awb-importer-chronix-6.1.0-SNAPSHOT.jar" module="ekg-awb-importer-chronix" />
+    <classpathentry kind="lib" path="ekg-awb-application/awb-application-base/target/awb-application-base-6.1.0-SNAPSHOT.jar" module="awb-application-base" />
+    <classpathentry kind="lib" path="ekg-awb-application/target/ekg-awb-application-6.1.0-SNAPSHOT-tests.jar" module="ekg-awb-application" />
+    <classpathentry kind="lib" path="ekg-awb-commons/target/ekg-awb-commons-6.1.0-SNAPSHOT.jar" module="ekg-awb-commons" />
+    <classpathentry kind="lib" path="ekg-awb-repository/ekg-awb-repository-api/target/ekg-awb-repository-api-6.1.0-SNAPSHOT.jar" module="ekg-awb-repository-api" />
+    <classpathentry kind="lib" path="ekg-awb-metricanalyzer/ekg-awb-metricanalyzer-bl/target/ekg-awb-metricanalyzer-bl-6.1.0-SNAPSHOT.jar" module="ekg-awb-metricanalyzer-bl" />
+    <classpathentry kind="lib" path="ekg-awb-application/awb-application-osx/target/awb-application-osx-6.1.0-SNAPSHOT.jar" module="awb-application-osx" />
+    <classpathentry kind="lib" path="ekg-awb-common-ui/target/ekg-awb-common-ui-6.1.0-SNAPSHOT-tests.jar" module="ekg-awb-common-ui" />
+    <classpathentry kind="lib" path="ekg-awb-common-ui/ekg-awb-common-ui-misc/target/ekg-awb-common-ui-misc-6.1.0-SNAPSHOT.jar" module="ekg-awb-common-ui-misc" />
+    <classpathentry kind="lib" path="ekg-awb-metricanalyzer/ekg-awb-metricanalyzer-ui/target/ekg-awb-metricanalyzer-ui-6.1.0-SNAPSHOT.jar" module="ekg-awb-metricanalyzer-ui" />
+    <classpathentry kind="lib" path="ekg-awb-explorer/target/ekg-awb-explorer-6.1.0-SNAPSHOT.jar" module="ekg-awb-explorer" />
+    <classpathentry kind="lib" path="ekg-awb-application/awb-application-win/target/awb-application-win-6.1.0-SNAPSHOT.jar" module="awb-application-win" />
+    <classpathentry kind="lib" path="ekg-awb-importer/ekg-awb-dimensionmapper/ekg-awb-dimensionmapper-api/target/ekg-awb-dimensionmapper-api-6.1.0-SNAPSHOT.jar" module="ekg-awb-dimensionmapper-api" />
+    <classpathentry kind="lib" path="ekg-awb-importer/ekg-awb-importer-mk/target/ekg-awb-importer-mk-6.1.0-SNAPSHOT.jar" module="ekg-awb-importer-mk" />
+    <classpathentry kind="lib" path="ekg-awb-importer/ekg-awb-dimensionmapper/ekg-awb-dimensionmapper-prometheus/target/ekg-awb-dimensionmapper-prometheus-6.1.0-SNAPSHOT.jar" module="ekg-awb-dimensionmapper-prometheus" />
+    <classpathentry kind="lib" path="ekg-awb-da/ekg-awb-da-solr/target/ekg-awb-da-solr-6.1.0-SNAPSHOT.jar" module="ekg-awb-da-solr" />
+    <classpathentry kind="lib" path="ekg-awb-importer/ekg-awb-importer-finance/target/ekg-awb-importer-finance-6.1.0-SNAPSHOT.jar" module="ekg-awb-importer-finance" />
+    <classpathentry kind="lib" path="ekg-awb-importer/ekg-awb-importer-prometheus/target/ekg-awb-importer-prometheus-6.1.0-SNAPSHOT.jar" module="ekg-awb-importer-prometheus" />
+    <classpathentry kind="lib" path="ekg-awb-repository/target/ekg-awb-repository-6.1.0-SNAPSHOT-tests.jar" module="ekg-awb-repository" />
+    <classpathentry kind="lib" path="ekg-awb-common-ui/ekg-awb-common-ui-chart/target/ekg-awb-common-ui-chart-6.1.0-SNAPSHOT.jar" module="ekg-awb-common-ui-chart" />
+    <classpathentry kind="lib" path="ekg-awb-da/target/ekg-awb-da-6.1.0-SNAPSHOT-tests.jar" module="ekg-awb-da" />
+    <classpathentry kind="lib" path="ekg-awb-common-ui/ekg-awb-common-ui-explorer/target/ekg-awb-common-ui-explorer-6.1.0-SNAPSHOT.jar" module="ekg-awb-common-ui-explorer" />
+    <classpathentry kind="lib" path="ekg-awb-common-ui/ekg-awb-common-ui-chartng/target/ekg-awb-common-ui-chartng-6.1.0-SNAPSHOT.jar" module="ekg-awb-common-ui-chartng" />
+    <classpathentry kind="lib" path="ekg-awb-da/ekg-awb-da-elasticsearch/target/ekg-awb-da-elasticsearch-6.1.0-SNAPSHOT.jar" module="ekg-awb-da-elasticsearch" />
+    <classpathentry kind="lib" path="ekg-awb-importer/ekg-awb-importer-csv/target/ekg-awb-importer-csv-6.1.0-SNAPSHOT.jar" module="ekg-awb-importer-csv" />
+    <classpathentry kind="lib" path="ekg-awb-project/target/ekg-awb-project-6.1.0-SNAPSHOT.jar" module="ekg-awb-project" />
+    <classpathentry kind="lib" path="ekg-awb-repository/ekg-awb-repository-ui/target/ekg-awb-repository-ui-6.1.0-SNAPSHOT.jar" module="ekg-awb-repository-ui" />
+    <classpathentry kind="lib" path="ekg-awb-repository/ekg-awb-repository-bl/target/ekg-awb-repository-bl-6.1.0-SNAPSHOT.jar" module="ekg-awb-repository-bl" />
+  </classpath>
+  <pom-root-files>
+    <pom path="pom.xml" />
+  </pom-root-files>
+  <modules>
+    <module name="ekg-awb-dimensionmapper-svh" kind="jar" />
+    <module name="ekg-awb-dimensionmapper-api" kind="jar" />
+    <module name="ekg-awb-da-elasticsearch" kind="jar" />
+    <module name="ekg-awb-commons" kind="jar" />
+    <module name="ekg-awb-repository-api" kind="jar">
+      <requires name="ekg-awb-commons" kind="jar" />
+    </module>
+    <module name="ekg-awb-common-ui-misc" kind="jar">
+      <requires name="ekg-awb-commons" kind="jar" />
+    </module>
+    <module name="ekg-awb-common-ui-chart" kind="jar">
+      <requires name="ekg-awb-commons" kind="jar" />
+    </module>
+    <module name="ekg-awb-repository-bl" kind="jar">
+      <requires name="ekg-awb-repository-api" kind="jar" />
+    </module>
+    <module name="ekg-awb-da-solr" kind="jar">
+      <requires name="ekg-awb-repository-api" kind="jar" />
+      <requires name="ekg-awb-commons" kind="jar" />
+    </module>
+    <module name="ekg-awb-common-ui-explorer" kind="jar">
+      <requires name="ekg-awb-commons" kind="jar" />
+      <requires name="ekg-awb-common-ui-misc" kind="jar" />
+    </module>
+    <module name="ekg-awb-common-ui-chartng" kind="jar">
+      <requires name="ekg-awb-commons" kind="jar" />
+      <requires name="ekg-awb-common-ui-misc" kind="jar" />
+    </module>
+    <module name="ekg-awb-repository-ui" kind="jar">
+      <requires name="ekg-awb-repository-bl" kind="jar" />
+      <requires name="ekg-awb-common-ui-misc" kind="jar" />
+      <requires name="ekg-awb-common-ui-explorer" kind="jar" />
+    </module>
+    <module name="awb-application-osx" kind="jar">
+      <requires name="ekg-awb-da-solr" kind="jar" />
+    </module>
+    <module name="ekg-awb-project" kind="jar">
+      <requires name="ekg-awb-commons" kind="jar" />
+      <requires name="ekg-awb-common-ui-misc" kind="jar" />
+      <requires name="ekg-awb-common-ui-explorer" kind="jar" />
+      <requires name="ekg-awb-repository-api" kind="jar" />
+      <requires name="ekg-awb-repository-ui" kind="jar" />
+    </module>
+    <module name="ekg-awb-metricanalyzer-bl" kind="jar">
+      <requires name="ekg-awb-repository-api" kind="jar" />
+      <requires name="ekg-awb-commons" kind="jar" />
+      <requires name="ekg-awb-project" kind="jar" />
+    </module>
+    <module name="ekg-awb-explorer" kind="jar">
+      <requires name="ekg-awb-commons" kind="jar" />
+      <requires name="ekg-awb-common-ui-explorer" kind="jar" />
+      <requires name="ekg-awb-project" kind="jar" />
+      <requires name="ekg-awb-repository-api" kind="jar" />
+    </module>
+    <module name="ekg-awb-metricanalyzer-ui" kind="jar">
+      <requires name="ekg-awb-repository-ui" kind="jar" />
+      <requires name="ekg-awb-explorer" kind="jar" />
+      <requires name="ekg-awb-metricanalyzer-bl" kind="jar" />
+      <requires name="ekg-awb-common-ui-chart" kind="jar" />
+      <requires name="ekg-awb-common-ui-chartng" kind="jar" />
+      <requires name="ekg-awb-common-ui-explorer" kind="jar" />
+      <requires name="ekg-awb-common-ui-misc" kind="jar" />
+      <requires name="ekg-awb-commons" kind="jar" />
+    </module>
+    <module name="ekg-awb-importer-api" kind="jar">
+      <requires name="ekg-awb-project" kind="jar" />
+      <requires name="ekg-awb-metricanalyzer-bl" kind="jar" />
+      <requires name="ekg-awb-metricanalyzer-ui" kind="jar" />
+      <requires name="ekg-awb-repository-ui" kind="jar" />
+      <requires name="ekg-awb-commons" kind="jar" />
+    </module>
+    <module name="awb-application-base" kind="jar">
+      <requires name="ekg-awb-commons" kind="jar" />
+      <requires name="ekg-awb-metricanalyzer-ui" kind="jar" />
+      <requires name="ekg-awb-project" kind="jar" />
+      <requires name="ekg-awb-common-ui-misc" kind="jar" />
+    </module>
+    <module name="ekg-awb-importer-timesheet" kind="jar">
+      <requires name="ekg-awb-importer-api" kind="jar" />
+      <requires name="ekg-awb-common-ui-misc" kind="jar" />
+    </module>
+    <module name="ekg-awb-importer-mk" kind="jar">
+      <requires name="ekg-awb-importer-api" kind="jar" />
+      <requires name="ekg-awb-common-ui-misc" kind="jar" />
+    </module>
+    <module name="ekg-awb-importer-csv" kind="jar">
+      <requires name="ekg-awb-importer-api" kind="jar" />
+      <requires name="ekg-awb-common-ui-misc" kind="jar" />
+    </module>
+    <module name="ekg-awb-importer-chronix" kind="jar">
+      <requires name="ekg-awb-importer-api" kind="jar" />
+      <requires name="ekg-awb-common-ui-misc" kind="jar" />
+    </module>
+    <module name="ekg-awb-dimensionmapper-prometheus" kind="jar">
+      <requires name="ekg-awb-importer-api" kind="jar" />
+    </module>
+    <module name="ekg-awb-importer-prometheus" kind="jar">
+      <requires name="ekg-awb-importer-api" kind="jar" />
+      <requires name="ekg-awb-common-ui-misc" kind="jar" />
+      <requires name="ekg-awb-dimensionmapper-prometheus" kind="jar" />
+    </module>
+    <module name="ekg-awb-importer-finance" kind="jar">
+      <requires name="ekg-awb-importer-api" kind="jar" />
+      <requires name="ekg-awb-common-ui-misc" kind="jar" />
+      <requires name="ekg-awb-importer-timesheet" kind="jar" />
+    </module>
+    <module name="awb-application-win" kind="jar">
+      <requires name="awb-application-base" kind="jar" />
+      <requires name="ekg-awb-da-solr" kind="jar" />
+      <requires name="ekg-awb-importer-chronix" kind="jar" />
+      <requires name="ekg-awb-importer-csv" kind="jar" />
+      <requires name="ekg-awb-importer-mk" kind="jar" />
+      <requires name="ekg-awb-importer-prometheus" kind="jar" />
+      <requires name="ekg-awb-importer-timesheet" kind="jar" />
+      <requires name="ekg-awb-importer-finance" kind="jar" />
+    </module>
+  </modules>
+  <modules-in-scope />
+  <excludes>
+    <exclude expression="de.qaware.ekg.awb.metricanalyzer.ui.util.dialog.AboutDialo" active="true" />
+    <exclude expression="*.de.qaware.ekg.awb.common.ui.chart.*" active="true" />
+    <exclude expression="*.de.qaware.ekg.awb.metricanalyzer.ui.chart.*" active="true" />
+    <exclude expression="*.de.qaware.ekg.awb.da.solr._legacy.*" active="true" />
+  </excludes>
+  <restructuring>
+    <set version="3" name="Action list 1" hiview="Codemap" active="true" list="0" />
+    <!-- do="false"  -->
+  </restructuring>
+  <sourcepaths>
+    <pathentry type="file" path="Z:\SoftwareEKG_SEU\codebase\ekg-qabuild-3.0\ekg-awb\ekg-awb-importer\ekg-awb-importer-api\src\main\java" />
+    <pathentry type="file" path="Z:\SoftwareEKG_SEU\codebase\ekg-qabuild-3.0\ekg-awb\ekg-awb-importer\ekg-awb-importer-timesheet\src\main\java" />
+    <pathentry type="file" path="Z:\SoftwareEKG_SEU\codebase\ekg-qabuild-3.0\ekg-awb\ekg-awb-importer\ekg-awb-importer-chronix\src\main\java" />
+    <pathentry type="file" path="Z:\SoftwareEKG_SEU\codebase\ekg-qabuild-3.0\ekg-awb\ekg-awb-application\awb-application-base\src\main\java" />
+    <pathentry type="file" path="Z:\SoftwareEKG_SEU\codebase\ekg-qabuild-3.0\ekg-awb\ekg-awb-commons\src\main\java" />
+    <pathentry type="file" path="Z:\SoftwareEKG_SEU\codebase\ekg-qabuild-3.0\ekg-awb\ekg-awb-repository\ekg-awb-repository-api\src\main\java" />
+    <pathentry type="file" path="Z:\SoftwareEKG_SEU\codebase\ekg-qabuild-3.0\ekg-awb\ekg-awb-metricanalyzer\ekg-awb-metricanalyzer-bl\src\main\java" />
+    <pathentry type="file" path="Z:\SoftwareEKG_SEU\codebase\ekg-qabuild-3.0\ekg-awb\ekg-awb-application\awb-application-osx\src\main\java" />
+    <pathentry type="file" path="Z:\SoftwareEKG_SEU\codebase\ekg-qabuild-3.0\ekg-awb\ekg-awb-common-ui\ekg-awb-common-ui-misc\src\main\java" />
+    <pathentry type="file" path="Z:\SoftwareEKG_SEU\codebase\ekg-qabuild-3.0\ekg-awb\ekg-awb-metricanalyzer\ekg-awb-metricanalyzer-ui\src\main\java" />
+    <pathentry type="file" path="Z:\SoftwareEKG_SEU\codebase\ekg-qabuild-3.0\ekg-awb\ekg-awb-explorer\src\main\java" />
+    <pathentry type="file" path="Z:\SoftwareEKG_SEU\codebase\ekg-qabuild-3.0\ekg-awb\ekg-awb-application\awb-application-win\src\main\java" />
+    <pathentry type="file" path="Z:\SoftwareEKG_SEU\codebase\ekg-qabuild-3.0\ekg-awb\ekg-awb-importer\ekg-awb-importer-mk\src\main\java" />
+    <pathentry type="file" path="Z:\SoftwareEKG_SEU\codebase\ekg-qabuild-3.0\ekg-awb\ekg-awb-importer\ekg-awb-dimensionmapper\ekg-awb-dimensionmapper-prometheus\src\main\java" />
+    <pathentry type="file" path="Z:\SoftwareEKG_SEU\codebase\ekg-qabuild-3.0\ekg-awb\ekg-awb-da\ekg-awb-da-solr\src\main\java" />
+    <pathentry type="file" path="Z:\SoftwareEKG_SEU\codebase\ekg-qabuild-3.0\ekg-awb\ekg-awb-importer\ekg-awb-importer-finance\src\main\java" />
+    <pathentry type="file" path="Z:\SoftwareEKG_SEU\codebase\ekg-qabuild-3.0\ekg-awb\ekg-awb-importer\ekg-awb-importer-prometheus\src\main\java" />
+    <pathentry type="file" path="Z:\SoftwareEKG_SEU\codebase\ekg-qabuild-3.0\ekg-awb\ekg-awb-common-ui\ekg-awb-common-ui-chart\src\main\java" />
+    <pathentry type="file" path="Z:\SoftwareEKG_SEU\codebase\ekg-qabuild-3.0\ekg-awb\ekg-awb-common-ui\ekg-awb-common-ui-explorer\src\main\java" />
+    <pathentry type="file" path="Z:\SoftwareEKG_SEU\codebase\ekg-qabuild-3.0\ekg-awb\ekg-awb-common-ui\ekg-awb-common-ui-chartng\src\main\java" />
+    <pathentry type="file" path="Z:\SoftwareEKG_SEU\codebase\ekg-qabuild-3.0\ekg-awb\ekg-awb-importer\ekg-awb-importer-csv\src\main\java" />
+    <pathentry type="file" path="Z:\SoftwareEKG_SEU\codebase\ekg-qabuild-3.0\ekg-awb\ekg-awb-project\src\main\java" />
+    <pathentry type="file" path="Z:\SoftwareEKG_SEU\codebase\ekg-qabuild-3.0\ekg-awb\ekg-awb-repository\ekg-awb-repository-ui\src\main\java" />
+    <pathentry type="file" path="Z:\SoftwareEKG_SEU\codebase\ekg-qabuild-3.0\ekg-awb\ekg-awb-repository\ekg-awb-repository-bl\src\main\java" />
+  </sourcepaths>
+  <grid-set sep="." version="5.0.13433">
+    <grid name="Software-EKG AWB Target-Architecture" enforce="true" locked="false" strict="false">
+      <row>
+        <cell name="application" pattern="*.de.qaware.ekg.awb.application.?" vexpanded="true" illegal="false" visibility="public" drill="false">
+          <grid>
+            <row>
+              <cell name="osx" pattern="*.de.qaware.ekg.awb.application.osx.*" vexpanded="false" illegal="false" visibility="public" drill="false">
+                <grid>
+                  <row>
+                    <cell name="da" pattern="de.qaware.ekg.awb.application.osx.da.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                </grid>
+              </cell>
+              <cell name="win" pattern="*.de.qaware.ekg.awb.application.win.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="base" pattern="*.de.qaware.ekg.awb.application.base.*" vexpanded="false" illegal="false" visibility="public" drill="false">
+                <grid>
+                  <row>
+                    <cell name="base" pattern="de.qaware.ekg.awb.application.base.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                  <row>
+                    <cell name="impl" pattern="de.qaware.ekg.awb.application.base.impl.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                  <row>
+                    <cell name="module" pattern="de.qaware.ekg.awb.application.base.module.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                  <row>
+                    <cell name="adapter" pattern="de.qaware.ekg.awb.application.base.adapter.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                  <row>
+                    <cell name="about" pattern="de.qaware.ekg.awb.application.base.about.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                    <cell name="strategy" pattern="de.qaware.ekg.awb.application.base.strategy.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                    <cell name="view" pattern="de.qaware.ekg.awb.application.base.view.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                </grid>
+              </cell>
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell name="importer" pattern="de.qaware.ekg.awb.importer.*" vexpanded="true" illegal="false" visibility="public" drill="false" bgcolor="153,204,255">
+          <grid>
+            <row>
+              <cell name="chronix" pattern="*.de.qaware.ekg.awb.importer.chronix.?" vexpanded="true" illegal="false" visibility="public" drill="false" bgcolor="209,237,255">
+                <grid>
+                  <row>
+                    <cell name="ui" pattern="*.de.qaware.ekg.awb.importer.chronix.ui.*" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                  <row>
+                    <cell name="bl" pattern="*.de.qaware.ekg.awb.importer.chronix.bl.*" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                  <row>
+                    <cell name="da" pattern="*.de.qaware.ekg.awb.importer.chronix.da.*" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                </grid>
+              </cell>
+              <cell name="csv" pattern="*.de.qaware.ekg.awb.importer.csv.?" vexpanded="true" illegal="false" visibility="public" drill="false" bgcolor="209,237,255">
+                <grid>
+                  <row>
+                    <cell name="ui" pattern="*.de.qaware.ekg.awb.importer.csv.ui.*" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                  <row>
+                    <cell name="bl" pattern="*.de.qaware.ekg.awb.importer.csv.bl.*" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                </grid>
+              </cell>
+              <cell pattern="" vexpanded="true" illegal="false" visibility="public" drill="true" bgcolor="115,169,202">
+                <grid>
+                  <row>
+                    <cell name="finance" pattern="*.de.qaware.ekg.awb.importer.finance.?" vexpanded="true" illegal="false" visibility="public" drill="false" bgcolor="209,237,255">
+                      <grid>
+                        <row>
+                          <cell name="ui" pattern="*.de.qaware.ekg.awb.importer.finance.ui.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                        </row>
+                        <row>
+                          <cell name="bl" pattern="*.de.qaware.ekg.awb.importer.finance.bl.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                        </row>
+                        <row>
+                          <cell name="et" pattern="*.de.qaware.ekg.awb.importer.finance.et.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                        </row>
+                      </grid>
+                    </cell>
+                  </row>
+                  <row>
+                    <cell name="timesheet" pattern="*.de.qaware.ekg.awb.importer.timesheet.?" vexpanded="true" illegal="false" visibility="public" drill="true" bgcolor="209,237,255">
+                      <grid>
+                        <row>
+                          <cell name="bl" pattern="*.de.qaware.ekg.awb.importer.timesheet.bl.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                        </row>
+                        <row>
+                          <cell name="et" pattern="*.de.qaware.ekg.awb.importer.timesheet.et.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                        </row>
+                        <row>
+                          <cell name="utils" pattern="*.de.qaware.ekg.awb.importer.timesheet.utils.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                        </row>
+                      </grid>
+                    </cell>
+                  </row>
+                </grid>
+              </cell>
+              <cell name="mikrokopter" pattern="*.de.qaware.ekg.awb.importer.mk.?" vexpanded="true" illegal="false" visibility="public" drill="true" bgcolor="209,237,255">
+                <grid>
+                  <row>
+                    <cell name="bl" pattern="*.de.qaware.ekg.awb.importer.mk.bl.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                  </row>
+                  <row>
+                    <cell name="et" pattern="*.de.qaware.ekg.awb.importer.mk.et.*" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                </grid>
+              </cell>
+              <cell name="prometheus" pattern="*.de.qaware.ekg.awb.importer.prometheus.?" vexpanded="true" illegal="false" visibility="public" drill="true" bgcolor="209,237,255">
+                <grid>
+                  <row>
+                    <cell name="bl" pattern="*.de.qaware.ekg.awb.importer.prometheus.bl.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                  </row>
+                  <row>
+                    <cell name="client" pattern="*.de.qaware.ekg.awb.importer.prometheus.client.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                  </row>
+                </grid>
+              </cell>
+            </row>
+            <row>
+              <cell name="dimensionmapper" pattern="*.de.qaware.ekg.awb.importer.dimensionmapper.?" vexpanded="false" illegal="false" visibility="public" drill="true" bgcolor="209,237,255">
+                <grid>
+                  <row>
+                    <cell name="prometheus" pattern="*.de.qaware.ekg.awb.importer.dimensionmapper.prometheus.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="svh" pattern="*.de.qaware.ekg.awb.importer.dimensionmapper.svh.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                  </row>
+                  <row>
+                    <cell name="api" pattern="*.de.qaware.ekg.awb.importer.dimensionmapper.api.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                  </row>
+                </grid>
+              </cell>
+            </row>
+            <row>
+              <cell name="api" pattern="*.de.qaware.ekg.awb.importer.api.*" vexpanded="false" illegal="false" visibility="public" drill="false" bgcolor="209,237,255" />
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell name="metricanalyzer" pattern="*.de.qaware.ekg.awb.metricanalyzer.?" vexpanded="true" illegal="false" visibility="public" drill="false">
+          <grid>
+            <row>
+              <cell name="ui" pattern="*.de.qaware.ekg.awb.metricanalyzer.ui.*" vexpanded="false" illegal="false" visibility="public" drill="false">
+                <grid>
+                  <row>
+                    <cell name="chart" pattern="de.qaware.ekg.awb.metricanalyzer.ui.chart.*" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                    <cell name="impl" pattern="de.qaware.ekg.awb.metricanalyzer.ui.impl.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                  <row>
+                    <cell name="explorer" pattern="de.qaware.ekg.awb.metricanalyzer.ui.explorer.*" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                  <row>
+                    <cell name="ui" pattern="de.qaware.ekg.awb.metricanalyzer.ui.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                    <cell name="bookmarks" pattern="de.qaware.ekg.awb.metricanalyzer.ui.bookmarks.*" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                    <cell name="header" pattern="de.qaware.ekg.awb.metricanalyzer.ui.filterheader.*" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                  <row>
+                    <cell name="converter" pattern="de.qaware.ekg.awb.metricanalyzer.ui.converter.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                    <cell name="repository" pattern="de.qaware.ekg.awb.metricanalyzer.ui.repository.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                </grid>
+              </cell>
+            </row>
+            <row>
+              <cell name="bl" pattern="de.qaware.ekg.awb.metricanalyzer.bl.*" vexpanded="true" illegal="false" visibility="public" drill="false">
+                <grid>
+                  <row>
+                    <cell name="visualisation" pattern="*.de.qaware.ekg.awb.metricanalyzer.bl.visualisation.?" vexpanded="true" illegal="false" visibility="public" drill="true">
+                      <grid>
+                        <row>
+                          <cell name="smoothing" pattern="*.de.qaware.ekg.awb.metricanalyzer.bl.visualisation.smoothing.*" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                          <cell name="combine" pattern="*.de.qaware.ekg.awb.metricanalyzer.bl.visualisation.combine.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                          <cell name="simplification" pattern="*.de.qaware.ekg.awb.metricanalyzer.bl.visualisation.simplification.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                        </row>
+                      </grid>
+                    </cell>
+                  </row>
+                  <row>
+                    <cell name="bookmarks" pattern="*.de.qaware.ekg.awb.metricanalyzer.bl.bookmarks.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                  </row>
+                  <row>
+                    <cell name="tsquery" pattern="*.de.qaware.ekg.awb.metricanalyzer.bl.tsquery.*" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                  <row>
+                    <cell name="api" pattern="*.de.qaware.ekg.awb.metricanalyzer.bl.api.*" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                </grid>
+              </cell>
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell name="awb-explorer" pattern="*.de.qaware.ekg.awb.explorer.?" vexpanded="true" illegal="false" visibility="public" drill="false">
+          <grid>
+            <row>
+              <cell name="ui" pattern="*.de.qaware.ekg.awb.explorer.ui.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="bl" pattern="*.de.qaware.ekg.awb.explorer.bl.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell name="awb-project" pattern="*.de.qaware.ekg.awb.project.?" vexpanded="true" illegal="false" visibility="public" drill="false">
+          <grid>
+            <row>
+              <cell name="ui" pattern="*.de.qaware.ekg.awb.project.ui.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="bl" desc="Business Logik des EKG Modul Projects" pattern="*.de.qaware.ekg.awb.project.bl.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="api" pattern="*.de.qaware.ekg.awb.project.api.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell name="repository" pattern="*.de.qaware.ekg.awb.repository.?" vexpanded="true" illegal="false" visibility="public" drill="false">
+          <grid>
+            <row>
+              <cell name="repository ui" pattern="*.de.qaware.ekg.awb.repository.ui.*" vexpanded="false" illegal="false" visibility="public" drill="false" />
+            </row>
+            <row>
+              <cell name="repository business-logik" pattern="*.de.qaware.ekg.awb.repository.bl.*" vexpanded="false" illegal="false" visibility="public" drill="false">
+                <grid>
+                  <row>
+                    <cell name="bl" pattern="de.qaware.ekg.awb.repository.bl.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                    <cell name="field" pattern="de.qaware.ekg.awb.metricanalyzer.bl.field.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                    <cell name="services" pattern="de.qaware.ekg.awb.repository.bl.services.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                </grid>
+              </cell>
+            </row>
+            <row>
+              <cell name="api" pattern="*.de.qaware.ekg.awb.repository.api.*" vexpanded="false" illegal="false" visibility="public" drill="false">
+                <grid>
+                  <row>
+                    <cell name="events" pattern="de.qaware.ekg.awb.repository.api.events.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                  <row>
+                    <cell name="api" pattern="de.qaware.ekg.awb.repository.api.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                  <row>
+                    <cell name="bookmark" pattern="de.qaware.ekg.awb.metricanalyzer.bl.bookmark.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                  <row>
+                    <cell name="query" pattern="de.qaware.ekg.awb.metricanalyzer.bl.query.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                  <row>
+                    <cell name="et" pattern="de.qaware.ekg.awb.repository.api.et.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                </grid>
+              </cell>
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell name="common" pattern="de.qaware.ekg.awb.common.*" vexpanded="true" illegal="false" visibility="public" drill="false">
+          <grid>
+            <row>
+              <cell name="ui" pattern="de.qaware.ekg.awb.common.ui.*" vexpanded="false" illegal="false" visibility="public" drill="false">
+                <grid>
+                  <row>
+                    <cell name="components" pattern="de.qaware.ekg.awb.common.ui.components.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                  <row>
+                    <cell name="ui" pattern="de.qaware.ekg.awb.common.ui.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                    <cell name="bindings" pattern="de.qaware.ekg.awb.common.ui.bindings.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                    <cell name="explorer" pattern="de.qaware.ekg.awb.common.ui.explorer.*" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                  <row>
+                    <cell name="chart" pattern="de.qaware.ekg.awb.common.ui.chart.*" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                    <cell name="converter" pattern="de.qaware.ekg.awb.common.ui.converter.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                    <cell name="events" pattern="de.qaware.ekg.awb.common.ui.events.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                    <cell name="test" pattern="de.qaware.ekg.awb.common.ui.test.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                    <cell name="validation" pattern="de.qaware.ekg.awb.common.ui.validation.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                    <cell name="view" pattern="de.qaware.ekg.awb.common.ui.view.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                </grid>
+              </cell>
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell name="dataaccess" pattern="de.qaware.ekg.awb.da.*" vexpanded="true" illegal="false" visibility="public" drill="false" bgcolor="255,204,153">
+          <grid>
+            <row>
+              <cell name="solr" pattern="*.de.qaware.ekg.awb.da.solr.?" vexpanded="true" illegal="false" visibility="public" drill="false" bgcolor="255,233,190">
+                <grid>
+                  <row>
+                    <cell name="embedded" pattern="*.de.qaware.ekg.awb.da.solr.embedded.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                  </row>
+                  <row>
+                    <cell name="export" pattern="*.de.qaware.ekg.awb.da.solr.export.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="expression" pattern="*.de.qaware.ekg.awb.da.solr.expression.*" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                  <row>
+                    <cell name="utils" pattern="*.de.qaware.ekg.awb.da.solr.utils.*" vexpanded="false" illegal="false" visibility="public" drill="false" />
+                  </row>
+                </grid>
+              </cell>
+              <cell name="elasticsearch" pattern="*.de.qaware.ekg.awb.da.elasticsearch.?" vexpanded="false" illegal="false" visibility="public" drill="true" bgcolor="255,233,190" />
+            </row>
+            <row>
+              <cell name="api" pattern="*.de.qaware.ekg.awb.da.api.*" vexpanded="false" illegal="false" visibility="public" drill="true" bgcolor="255,233,190" />
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell name="common-ui" desc="Common JavaFX components-lib" pattern="*.de.qaware.ekg.awb.common.ui.?" vexpanded="true" illegal="false" visibility="public" drill="true">
+          <grid>
+            <row>
+              <cell name="explorer" pattern="*.de.qaware.ekg.awb.common.ui.explorer.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="chartng" pattern="*.de.qaware.ekg.awb.common.ui.chartng.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="misc" pattern="*.de.qaware.ekg.awb.common.ui.misc.*" vexpanded="false" illegal="false" visibility="public" drill="true">
+                <grid>
+                  <row>
+                    <cell name="components" pattern="*.de.qaware.ekg.awb.common.ui.components.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="view" pattern="*.de.qaware.ekg.awb.common.ui.view.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="skins" pattern="*.de.qaware.ekg.awb.common.ui.skins.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                  </row>
+                  <row>
+                    <cell name="bindings" pattern="*.de.qaware.ekg.awb.common.ui.bindings.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                  </row>
+                  <row>
+                    <cell name="converter" pattern="*.de.qaware.ekg.awb.common.ui.converter.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                  </row>
+                  <row>
+                    <cell name="events" pattern="*.de.qaware.ekg.awb.common.ui.events.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                  </row>
+                  <row>
+                    <cell name="validation" pattern="*.de.qaware.ekg.awb.common.ui.validation.*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                  </row>
+                </grid>
+              </cell>
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell name="commons" pattern="*.de.qaware.ekg.awb.commons.?" vexpanded="true" illegal="false" visibility="public" drill="false">
+          <grid>
+            <row>
+              <cell name="lookup" pattern="*.de.qaware.ekg.awb.sdk.core.lookup.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+            </row>
+            <row>
+              <cell name="beans" pattern="*.de.qaware.ekg.awb.commons.beans.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+              <cell name="eventbus" pattern="*.de.qaware.ekg.awb.sdk.core.events.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+            </row>
+            <row>
+              <cell name="fileutil" pattern="*.de.qaware.ekg.awb.importer.csv.fileutil.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+            </row>
+            <row>
+              <cell name="about" pattern="*.de.qaware.ekg.awb.commons.about.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+              <cell name="log" pattern="*.de.qaware.ekg.awb.commons.log.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+              <cell name="module" pattern="*.de.qaware.ekg.awb.commons.module.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+              <cell name="reflection" pattern="*.de.qaware.ekg.awb.commons.reflection.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+              <cell name="utils" pattern="*.de.qaware.ekg.awb.commons.utils.?" vexpanded="false" illegal="false" visibility="public" drill="false" />
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <description>Top-level breakout (depth=3)</description>
+    </grid>
+  </grid-set>
+</local-project>

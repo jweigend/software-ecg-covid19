@@ -1,0 +1,98 @@
+
+
+.stackedChartLegend {
+    -fx-max-width: 9999;
+}
+
+.legendBaseChartItem {
+    -fx-max-width: 9999;
+}
+
+.legendBackgroundChartItem {
+    -fx-padding: 6 0 0 0;
+}
+
+.baseChartCtrlBar, .backgroundChartCtrlBar {
+    -fx-spacing: 4;
+    -fx-alignment: center-left;
+    -fx-background-color: #e2e7ed;
+    -fx-max-width: 9999;
+    -fx-padding: 2 2 2 6;
+}
+
+.baseChartCtrlBar > .label, .backgroundChartCtrlBar > .label {
+    -fx-padding: 0 20 0 10;
+    -fx-min-width: 300;
+    -fx-font-weight: bold;
+}
+
+.baseChartCtrlBar .button, .backgroundChartCtrlBar > .button  {
+    -fx-max-height: 23;
+    -fx-min-height: 23;
+    -fx-font-size: 11;;
+}
+
+.baseChartCtrlBar .combo-box, .backgroundChartCtrlBar > .combo-box  {
+    -fx-max-height: 23;
+    -fx-min-height: 23;
+    -fx-font-size: 11;
+}
+
+.baseChartCtrlBar .split-menu-button {
+    -fx-max-height: 23;
+    -fx-min-height: 23;
+    -fx-font-size: 11;
+}
+
+.seriesLabel:selected {
+    -fx-font-weight: bold;
+}
+
+.noSeriesLabel {
+    -fx-text-fill: grey;
+    -fx-padding: 8 0 8 30;
+}
+
+/*
+------------------------------------------------------------------------------------------------
+  styles the color picker that is displayed at each LegendSeriesItem in the chart legend
+------------------------------------------------------------------------------------------------
+*/
+
+.legendSeriesItem .color-picker {
+    -fx-max-width: 18;
+    -fx-min-width: 18;
+    -fx-max-height: 18;
+    -fx-min-height: 18;
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-translate-y: 1;
+}
+
+.legendSeriesItem .color-picker .picker-color-rect {
+    -fx-arc-height: 8;
+    -fx-arc-width: 8;
+    -fx-stroke: none;
+}
+
+.legendSeriesItem .color-picker .color-picker-label .text {
+    visibility: false;
+}
+
+
+.legendSeriesItem .color-picker .color-picker-label{
+
+    -fx-spacing: 0;
+    -fx-padding: 3;
+    -fx-border-width: 0;
+    -fx-border-radius: 2;
+}
+
+.legendSeriesItem .color-picker:disabled {
+    -fx-opacity: 1.0;
+}
+
+.legendSeriesItem .lockIcon {
+    -fx-translate-x: 7;
+    -fx-translate-y: 4;
+}

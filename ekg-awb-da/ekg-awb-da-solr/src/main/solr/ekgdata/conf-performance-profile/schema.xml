@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<schema name="Software-EKG" version="1.6">
+
+    <types>
+        <!-- The StrField type is not analyzed, but indexed/stored verbatim. -->
+        <fieldType name="string" class="solr.StrField" sortMissingLast="true" omitNorms="true"  />
+
+        <!-- boolean type: "true" or "false" -->
+        <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true" omitNorms="true"/>
+
+        <!-- Unique ID type -->
+        <fieldType name="uuid" class="solr.UUIDField" indexed="true" stored="true" />
+
+        <!-- Date -->
+        <fieldType name="tdate" class="solr.TrieDateField" omitNorms="true" precisionStep="6" positionIncrementGap="0"/>
+
+        <fieldType name="int" class="solr.TrieIntField" precisionStep="0" positionIncrementGap="0"/>
+        <fieldType name="float" class="solr.TrieFloatField" precisionStep="0" positionIncrementGap="0"/>
+        <fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
+        <fieldType name="double" class="solr.TrieDoubleField" precisionStep="0" positionIncrementGap="0"/>
+
+        <fieldType name="text" class="solr.TextField">
+            <analyzer>
+                <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+            </analyzer>
+        </fieldType>
+
+        <fieldType name="binary" class="solr.BinaryField"/>
+
+    </types>
+
+    <fields>
+        <field name="_version_" type="long" indexed="true" stored="true"/>
+
+        <!-- common -->
+        <field name="id"   type="uuid"   indexed="true" stored="true" required="true"/>
+        <field name="type" type="string" indexed="true" stored="true" required="true"/>
+
+        <!--
+        ******************************************************************************************************
+          project data fields
+        ******************************************************************************************************
+        -->
+
+        <field name="project_name" type="string" indexed="true" stored="true" required="false"/>
+
+        <!--
+          The description of the project that serves some more details about the project content
+        -->
+        <field name="project_description" type="string" indexed="true" stored="true" required="false"/>
+
+        <!--
+          true = REMOTE_PROJECT, false = LOCAL_PROJECT (see ProjectType enum)
+        -->
+        <field name="project_isremote" type="boolean" indexed="true" stored="true" required="false"/>
+
+
+        <!--
+          true = SPLIT_SOURCE_PROJECT, false = LOCAL_PROJECT (see ProjectType enum)
+        -->
+        <field name="project_useSplitSource" type="boolean" indexed="true" stored="true" required="false"/>
+
+        <!--
+          DEFAULT; GENERIC; SPECIALIZED (see ProjectTimeSeriesType enum)
+        -->
+        <field name="project_timeseries_type" type="string" indexed="true" stored="true" required="false"/>
+
+        <!--
+          NONE; OPEN_SHIFT; KUBERNETES; OTHER (see CloudPlatformType enum)
+        -->
+        <field name="project_cn_type" type="string" indexed="true" stored="true" required="false"/>
+
+        <!--
+          The id of the importer the that is allowed to import data to this project
+        -->
+        <field name="project_importerId" type="string" indexed="true" stored="true" required="false"/>
+
+
+        <!-- project specific dimension alias (optional filled) -->
+        <field name="project_dimension_alias_hostGroup"   type="string" indexed="false" stored="true" required="false"/>
+        <field name="project_dimension_alias_host"        type="string" indexed="false" stored="true" required="false"/>
+        <field name="project_dimension_alias_namespace"   type="string" indexed="false" stored="true" required="false"/>
+        <field name="project_dimension_alias_service"     type="string" indexed="false" stored="true" required="false"/>
+        <field name="project_dimension_alias_pod"         type="string" indexed="false" stored="true" required="false"/>
+        <field name="project_dimension_alias_container"   type="string" indexed="false" stored="true" required="false"/>
+        <field name="project_dimension_alias_measurement" type="string" indexed="false" stored="true" required="false"/>
+        <field name="project_dimension_alias_process"     type="string" indexed="false" stored="true" required="false"/>
+        <field name="project_dimension_alias_metricGroup" type="string" indexed="false" stored="true" required="false"/>
+        <field name="project_dimension_alias_metricName"  type="string" indexed="false" stored="true" required="false"/>
+
+        <!-- dynamic filter dimensions for project data -->
+        <dynamicField name="project_ext_*" type="string" indexed="true" stored="true" required="false"/>
+
+        <!--
+        ******************************************************************************************************
+          types config used either for EKG repositories and also for importers remote data sources
+        ******************************************************************************************************
+        -->
+        <!--
+           an optional id of remote data source that that is bind to the project by the importer
+           (for example an Prometheus instance)
+         -->
+
+
+        <!-- configuration -->
+        <field name="repository_isSource"         type="boolean" indexed="true"  stored="true" required="false"/>
+        <field name="repository_authType"         type="string"  indexed="false" stored="true" required="false"/>
+        <field name="repository_name"             type="string"  indexed="true"  stored="true" required="false"/>
+        <field name="repository_dbType"           type="string"  indexed="true"  stored="true" required="false"/>
+        <field name="repository_url"              type="string"  indexed="false" stored="true" required="false"/>
+        <field name="repository_dbIndexName"      type="string"  indexed="false" stored="true" required="false"/>
+        <field name="repository_user"             type="string"  indexed="false" stored="true" required="false"/>
+        <field name="repository_pass"             type="string"  indexed="false" stored="true" required="false"/>
+        <field name="repository_ssoToken"         type="string"  indexed="true"  stored="true" required="false"/>
+        <field name="repository_accordingProject" type="string"  indexed="true"  stored="true" required="false"/>
+
+        <!-- dynamic filter dimensions for project data -->
+        <dynamicField name="repository_ext_*" type="string" indexed="true" stored="true" required="false"/>
+
+        <!--
+        ******************************************************************************************************
+          time series data fields
+        ******************************************************************************************************
+        -->
+
+        <!-- classic only -->
+        <field name="ts_hostGroup"   type="string" indexed="true" stored="true" required="false" docValues="true" />
+        <field name="ts_host"        type="string" indexed="true" stored="true" required="false" docValues="true" />
+
+        <!-- cloud native only -->
+        <field name="ts_namespace"   type="string" indexed="true" stored="true" required="false" docValues="true" />
+        <field name="ts_service"     type="string" indexed="true" stored="true" required="false" docValues="true" />
+        <field name="ts_pod"         type="string" indexed="true" stored="true" required="false" docValues="true" />
+        <field name="ts_container"   type="string" indexed="true" stored="true" required="false" docValues="true" />
+
+        <!-- common dimensions -->
+        <field name="ts_measurement" type="string" indexed="true" stored="true" required="false" docValues="true" />
+        <field name="ts_process"     type="string" indexed="true" stored="true" required="false" docValues="true" />
+        <field name="ts_metricGroup" type="string" indexed="true" stored="true" required="false" docValues="true" />
+        <field name="ts_metricName"  type="string" indexed="true" stored="true" required="false" docValues="true" />
+
+        <!-- metadata of the time-series -->
+        <field name="ts_isCloudMetric"     type="boolean" indexed="false" stored="true" required="false" docValues="true" />
+        <field name="ts_remoteSeriesKey"   type="string"  indexed="false" stored="true" required="false" docValues="true" />
+        <field name="ts_importDate"        type="tdate"   indexed="true"  stored="true" required="false" docValues="true" />
+        <field name="ts_data"              type="binary"  indexed="false" stored="true" required="false" docValues="true" />
+        <field name="ts_data_amountValues" type="int"     indexed="false" stored="true" required="false" docValues="true" />
+        <field name="ts_start"             type="tdate"   indexed="true"  stored="true" required="false" docValues="true" />
+        <field name="ts_end"               type="tdate"   indexed="true"  stored="true" required="false" docValues="true" />
+        <field name="ts_ag"                type="string"  indexed="true"  stored="true" required="false" docValues="true" />
+        <field name="ts_exclude"           type="string"  indexed="true"  stored="true" required="false" docValues="true" />
+        <field name="ts_isMerged"          type="boolean" indexed="true"  stored="true" required="false" />
+        <field name="ts_groupKeyHash"      type="int"     indexed="true"  stored="true" required="false" />
+
+        <!-- dynamic filter dimensions for time series data -->
+        <dynamicField name="ts_ext_dimension_*" type="string" indexed="true" stored="true" required="false"/>
+
+        <!--
+        ******************************************************************************************************
+          bookmarks
+        ******************************************************************************************************
+        -->
+
+        <!-- The name of the bookmark that will displayed in the UI -->
+        <field name="bookmarkName"  type="string" indexed="true"  stored="true" required="false"/>
+
+        <!-- The unique id of the bookmark group. The id for the global space will be '_BOOKMARK_GLOBAL_' -->
+        <field name="bookmarkGroupId"   type="string" indexed="true"  stored="true" required="false"/>
+
+        <!-- The name of the bookmark group the bookmark belongs to. If not defined 'GLOBAL' will used as default. -->
+        <field name="bookmarkGroupName"   type="string" indexed="true"  stored="true" required="false"/>
+
+        <!-- The description of the bookmark that provides further informations about the bookmark -->
+        <field name="bookmarkDescription" type="string" indexed="false" stored="true" required="false"/>
+
+        <!-- The JSON serialized protocol of each chart action that were handled by the ProtocolManager -->
+        <field name="bookmarkProtocol"    type="string" indexed="false" stored="true" required="false"/>
+
+        <!-- The timezone setting the user currently uses -->
+        <field name="bookmarkTimeZone"    type="string" indexed="false" stored="true" required="false"/>
+
+        <!-- dynamic filter dimensions for bookmark data -->
+        <dynamicField name="bookmark_ext_*" type="text" indexed="true" stored="true" required="false"/>
+
+    </fields>
+
+    <!--
+    PersistedField to use to determine and enforce document uniqueness. Unless this field is marked
+    with required="false", it will be a required field
+    -->
+    <uniqueKey>id</uniqueKey>
+
+</schema>

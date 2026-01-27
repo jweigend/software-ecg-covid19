@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.qaware.ekg.awb.repository.ui.selector.RepositorySelectorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.SVGPath?>
+<?import java.net.URL?>
+<DialogPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="de.qaware.ekg.awb.project.ui.mgrdialog.CreateProjectDialogController"
+            minWidth="530" maxWidth="530" minHeight="400" maxHeight="400">
+
+
+    <content>
+        <GridPane id="contentGridPane">
+
+            <rowConstraints>
+                <RowConstraints minHeight="20.0" maxHeight="20.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="31.0" maxHeight="31.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="5.0"  maxHeight="5.0"  vgrow="NEVER"/>
+                <RowConstraints minHeight="31.0" maxHeight="31.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="31.0" maxHeight="31.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="31.0" maxHeight="31.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="31.0" maxHeight="31.0" vgrow="NEVER"/>
+            </rowConstraints>
+
+            <columnConstraints>
+                <ColumnConstraints halignment="LEFT" minWidth="150" maxWidth="150" hgrow="NEVER"/>
+                <ColumnConstraints hgrow="ALWAYS"/>
+                <ColumnConstraints halignment="RIGHT" minWidth="40" maxWidth="40" hgrow="NEVER"/>
+            </columnConstraints>
+
+
+            <Label styleClass="lblHeadlines" text="Choose repository:" GridPane.rowIndex="0" GridPane.columnSpan="3" />
+
+            <!-- selection component for remote repositories -->
+            <RepositorySelectorPane fx:id="repositorySelector" labelWidth="140" GridPane.rowIndex="1" GridPane.columnSpan="3"/>
+
+
+
+            <Label styleClass="lblHeadlines" text="Define project properties:" GridPane.rowIndex="3" GridPane.columnSpan="3" />
+
+            <!-- project name -->
+            <Label styleClass="dialogLabel" labelFor="$null" id="txtProjectNameLabel" text="Project name:" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+
+            <TextField id="projectName" fx:id="txtProjectName" promptText="Choose a distinct project name" GridPane.rowIndex="4" GridPane.columnIndex="1" GridPane.columnSpan="2" />
+
+            <Group fx:id="warningIcon" visible="false" GridPane.rowIndex="4" GridPane.columnIndex="1" GridPane.columnSpan="2" translateX="-30" />
+
+            <Group fx:id="errorBubble" GridPane.rowIndex="4" GridPane.columnIndex="1"  GridPane.columnSpan="2">
+                <Label text="Project name has already been chosen!"  />
+                <SVGPath content="M 130 30 L 170 30 L 150 40 z" translateY="-1" fill="#990000" />
+            </Group>
+
+            <!-- project flavor -->
+            <Label styleClass="dialogLabel" labelFor="$null" id="txtProjectFlavorLabel" text="Kind of project:"
+                   GridPane.rowIndex="5" GridPane.columnIndex="0" />
+            <ComboBox fx:id="cbProjectFlavor" GridPane.rowIndex="5" GridPane.columnIndex="1" GridPane.columnSpan="2" />
+
+            <!-- project platform flavor -->
+            <Label  styleClass="dialogLabel" labelFor="$null" id="txtPlatformFlavorLabel" text="Cloud platform type:"
+                    GridPane.rowIndex="6" GridPane.columnIndex="0" />
+            <ComboBox fx:id="cbCloudPlatformType" GridPane.rowIndex="6" GridPane.columnIndex="1" GridPane.columnSpan="2" />
+
+        </GridPane>
+    </content>
+
+
+    <!-- the button that will shown in the dialog -->
+    <ButtonType fx:constant="APPLY"/>
+    <ButtonType fx:constant="CANCEL"/>
+
+    <stylesheets>
+        <URL value="@ProjectDialogStyle.css"/>
+    </stylesheets>
+
+</DialogPane>

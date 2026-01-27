@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.qaware.ekg.awb.project.ui.projectbar.ProjectBar?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:id="borderPane" center="$null" maxHeight="1.7976931348623157E308"
+            maxWidth="1.7976931348623157E308" prefHeight="1024.0" prefWidth="1280.0"
+            fx:controller="de.qaware.ekg.awb.application.base.impl.EkgApplicationController" >
+
+    <top>
+        <VBox>
+            <MenuBar fx:id="menuBar" prefWidth="1834.0">
+
+                <!-- File menu - the underscore enables mnemonicParsing -->
+                <Menu text="Data" id="file">
+
+                    <!-- Import CSV file manually -->
+                    <MenuItem mnemonicParsing="false" text="Import CSV File..." onAction="#handleImportCsvFile" />
+
+                    <SeparatorMenuItem />
+
+                    <!--
+                    selector for metric repositories
+                    the id's of all element haven an number to enable sorting of menu
+                    -->
+                    <MenuItem mnemonicParsing="false" text="Add metric repository" onAction="#handleOpenEkgRepositoryAdminDialog" />
+
+                    <!--
+                     Menu item which will open a dialog to create a new project in a remote EKG repository
+                     which will/can used by EKG collector than writing time series data directly to database instead
+                     using CSV files.
+                     -->
+                    <MenuItem mnemonicParsing="false" text="Create collector project" onAction="#handleOpenAddProjectDialog" />
+
+                    <!--
+                    ********************************************************************************************************
+                    all elements inside this area will bind by the import modules itself.
+                    Do not remove the separator items and it's ID's otherwise the binding won't work anymore
+                    -->
+                    <SeparatorMenuItem id="importerMenuAreaStart" />
+
+                    <!-- menu items will added at runtime by the importer modules -->
+
+                    <SeparatorMenuItem id="importerMenuAreaEnd" />
+                    <!--
+                    ********************************************************************************************************
+                    -->
+
+                    <!-- exit the workbench -->
+                    <MenuItem mnemonicParsing="false" text="Quit" onAction="#handleExitMenuItemAction" />
+                </Menu>
+
+                <!-- View menu -->
+                <Menu mnemonicParsing="false" text="View" id="view">
+                    <MenuItem mnemonicParsing="false" onAction="#restoreDefault" text="Restore Default Layout"/>
+                </Menu>
+
+                <!-- Help menu -->
+                <Menu text="Help" id="help">
+                    <MenuItem fx:id="confluenceLink" text="Confluence" onAction="#handleConfluenceLinkAction"/>
+                    <MenuItem fx:id="refManualLink" text="Reference manual" onAction="#handleRefManualLinkAction"/>
+                    <MenuItem onAction="#handleAboutMenuItemAction" text="About Software-EKG" />
+                </Menu>
+            </MenuBar>
+
+            <ProjectBar />
+        </VBox>
+    </top>
+
+
+    <bottom>
+        <!-- this component is part of StagediverFX and could resolved by IDE correctly -->
+        <!--suppress XmlPathReference -->
+        <fx:include fx:id="statusBar" source="/default/ProgressView.fxml" />
+    </bottom>
+
+
+</BorderPane>

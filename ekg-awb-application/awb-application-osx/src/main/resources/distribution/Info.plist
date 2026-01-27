@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- created with Gradle, http://gradle.org, and the MacAppBundle plugin, http://code.google.com/p/gradle-macappbundle -->
+<plist version='1.0'>
+  <dict>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>English</string>
+
+    <key>CFBundleExecutable</key>
+    <string>start-software-ekg</string>
+
+    <key>CFBundleIconFile</key>
+    <string>ekg-logo-ico.icns</string>
+
+    <key>CFBundleIdentifier</key>
+    <string>Software-EKG-MacOS</string>
+
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.1</string>
+
+    <key>CFBundleName</key>
+    <string>Software-EKG</string>
+
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+
+    <key>CFBundleVersion</key>
+    <string>6.2</string>
+
+    <key>CFBundleShortVersionString</key>
+    <string>6.2</string>
+
+    <key>CFBundleAllowMixedLocalizations</key>
+    <true />
+
+    <key>JVMOptions</key>
+    <string>-Xdock:name=Name</string>
+
+    <key>NSHighResolutionCapable</key>
+    <true />
+
+    <key>CFBundleSignature</key>
+    <string>-</string>
+
+  </dict>
+</plist>

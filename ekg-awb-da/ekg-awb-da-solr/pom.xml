@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.qaware.ekg.awb</groupId>
+        <artifactId>ekg-awb-da</artifactId>
+        <version>6.2.3-COVID-EDITION-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>ekg-awb-da-solr</artifactId>
+    <packaging>jar</packaging>
+
+    <description>
+        Software-EKG data access module that provides an abstraction layer on Solr (standalone, cloud and embedded) with
+        version support up to v6.x - v8.4 and all later ones that are compatible.
+        This module implements the repository api and support all AWB schema fields, use-cases and as a special support
+        for the embedded repository as default storage of EKG.
+    </description>
+
+
+    <dependencies>
+
+        <!--
+         provides the API that is implemented by this data access component
+        -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ekg-awb-repository-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!--
+         provides EKG basic utils/components like the EKG logger that is in use
+        -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ekg-awb-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!--
+         provides the API to access Solr remote/local instances via service interface
+        -->
+        <dependency>
+            <groupId>org.apache.solr</groupId>
+            <artifactId>solr-solrj</artifactId>
+        </dependency>
+
+        <!--
+         provides Solr core classes for example the EmbeddedSolrServer need as for default storage
+        -->
+        <dependency>
+            <groupId>org.apache.solr</groupId>
+            <artifactId>solr-core</artifactId>
+        </dependency>
+
+        <!-- SLF4J simple binding for tests -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+</project>

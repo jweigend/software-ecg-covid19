@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<DialogPane xmlns:fx="http://javafx.com/fxml"  minWidth="464" maxWidth="464" minHeight="442"  maxHeight="442"
+            fx:controller="de.qaware.ekg.awb.repository.ui.admin.EkgRepositoryAdminController"
+            fx:id="repositoryAdminDialogPane" >
+
+    <content>
+        <GridPane id="contentGridPane">
+
+            <rowConstraints>
+                <RowConstraints minHeight="32.0" maxHeight="32.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="32.0" maxHeight="32.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="32.0" maxHeight="32.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="32.0" maxHeight="32.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="32.0" maxHeight="32.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="32.0" maxHeight="32.0" vgrow="NEVER"/>
+            </rowConstraints>
+
+            <columnConstraints>
+                <ColumnConstraints minWidth="120" maxWidth="120" hgrow="NEVER"/>
+                <ColumnConstraints hgrow="ALWAYS"/>
+            </columnConstraints>
+
+            <!-- Row 1: Repository Typ -->
+            <Label id="lbRepositoryType" text="Repository type:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+            <ComboBox fx:id="cbRepositoryDbType" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+            <!-- Row 2: Repository Name (readable alias to display) -->
+            <Label id="lbRepositoryName" text="Name:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+            <TextField fx:id="txtRepositoryName" promptText="Insert repository name."
+                       GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+            <!-- Row 3: Connection URL of the types -->
+            <Label fx:id="lbRepositoryUrl" text="Repository URL:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+            <TextField fx:id="txtRepositoryUrl" promptText="Insert repository URL."
+                       GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+            <!-- Row 4: name of the types index (as example at Solr this is the collection/core name) -->
+            <Label fx:id="lbRepositoryIndexName" text="Index Name:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+            <TextField fx:id="txtRepositoryIndexName" promptText="Insert index, for example Solr collection."
+                       GridPane.rowIndex="3" GridPane.columnIndex="1" />
+
+            <!-- Row 5: Authentication type -->
+            <Label id="lbRepositoryAuthType" text="Authentification:" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+            <ComboBox fx:id="cbRepositoryAuthType" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+
+            <!-- Row: password required to connect to types (optional)
+            <Label id="lbRepositoryOAuthServer" text="OAuth-Server:" GridPane.rowIndex="5" GridPane.columnIndex="0" />
+            <PasswordField fx:id="txtRepositoryOAuthServer" promptText="Absolute (Service) URL des OAuth Servers"
+                           GridPane.rowIndex="5" GridPane.columnIndex="1"  />
+            -->
+
+            <!-- Row 6: User repositoryName required to connect to types (optional) -->
+            <Label id="lbRepositoryName" text="Name:" GridPane.rowIndex="5" GridPane.columnIndex="0" />
+            <TextField fx:id="txtRepositoryAuthUsername" promptText="Insert username."
+                       GridPane.rowIndex="5" GridPane.columnIndex="1" />
+
+            <!-- Row 7: password required to connect to types (optional) -->
+            <Label id="lbRepositoryPassword" text="Password:" GridPane.rowIndex="6" GridPane.columnIndex="0" />
+            <PasswordField fx:id="txtRepositoryAuthPassword" promptText="Insert password."
+                       GridPane.rowIndex="6" GridPane.columnIndex="1" />
+        </GridPane>
+    </content>
+
+    <!-- the button that will shown in the dialog -->
+    <ButtonType fx:constant="APPLY"/>
+    <ButtonType fx:constant="CANCEL"/>
+
+    <stylesheets>
+        <URL value="@EkgRepositoryAdminStyle.css"/>
+    </stylesheets>
+</DialogPane>

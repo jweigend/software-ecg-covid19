@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2018 (64 Bit) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="400px" height="400px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 400 400"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:black;stroke-width:12;stroke-miterlimit:22.9256}
+    .str1 {stroke:black;stroke-width:0.8;stroke-miterlimit:22.9256}
+    .fil2 {fill:black}
+    .fil0 {fill:#336699}
+    .fil1 {fill:white}
+   ]]>
+  </style>
+ </defs>
+ <g id="Ebene_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <path class="fil0" d="M341.81 118.88c0,-55.27 -45.22,-100.49 -100.49,-100.49 -47.11,0 -86.68,32.66 -97.35,75.99 -30.15,5.03 -53.39,30.78 -53.39,62.18 0,34.55 28.26,62.81 62.81,62.81l188.42 0c27.64,0 50.25,-22.61 50.25,-50.24 0,-27.64 -22.61,-50.25 -50.25,-50.25z"/>
+  <rect class="fil1 str0" x="22.96" y="130.26" width="263.52" height="104.29" rx="30.9" ry="25.98"/>
+  <rect class="fil1 str0" x="23.11" y="256.18" width="263.52" height="104.29" rx="30.9" ry="25.98"/>
+  <rect class="fil2" x="42.3" y="150.07" width="188.69" height="15.88" rx="22.13" ry="3.96"/>
+  <rect class="fil2" x="42.45" y="275.99" width="188.69" height="15.88" rx="22.13" ry="3.96"/>
+  <rect class="fil2" x="41.96" y="173.9" width="188.69" height="15.88" rx="22.13" ry="3.96"/>
+  <rect class="fil2" x="42.11" y="299.82" width="188.69" height="15.88" rx="22.13" ry="3.96"/>
+  <rect class="fil2" x="42.42" y="197.84" width="188.69" height="15.88" rx="22.13" ry="3.96"/>
+  <rect class="fil2" x="42.57" y="323.77" width="188.69" height="15.88" rx="22.13" ry="3.96"/>
+  <circle class="fil2 str1" cx="256.44" cy="167.6" r="9.44"/>
+  <circle class="fil2 str1" cx="256.59" cy="293.52" r="9.44"/>
+ </g>
+</svg>
