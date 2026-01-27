@@ -1,46 +1,32 @@
-name: Build and Analyze
+name: Java CI with Maven
 
-# Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build-and-analyze:
-    # The type of runner that the job will run on
+  build:
     runs-on: ubuntu-latest
-    env:
-      MAVEN_CLI_OPTS: "--batch-mode --errors --fail-at-end --show-version"
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      
-      # Install Jdk 11
-      - name: Setup Java JDK
-        uses: actions/setup-java@v1.4.3
-        with:
-          java-version: "11"
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-      # Install dependencies
-      - name: Install dependencies
-        run: mvn install -f install.xml
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven
 
-      # Build and test code
-      - name: Build and test
-        run: mvn $MAVEN_CLI_OPTS verify
+    - name: Install local SDK libraries
+      run: mvn install -f install.xml -q
 
-      # Analyze code
-      - name: Analyze
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MAVEN_SONAR_OPTS: "-Dsonar.host.url=${{ secrets.SONAR_URL }} -Dsonar.login=${{ secrets.SONAR_TOKEN }} -Dsonar.organization=${{ secrets.SONAR_ORG }}"
-        run: mvn $MAVEN_SONAR_OPTS sonar:sonar
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
+
+    - name: Run tests
+      run: mvn -B test --file pom.xml
