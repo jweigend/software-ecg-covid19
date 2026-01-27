@@ -3,13 +3,15 @@
 The Software-ECG is also called Software-EKG. 
 EKG stands for Elektrokardiogramm in german which is Electrocardiography or ECG in english.
 
+![Software ECG COVID-19 Edition Screenshot](web/images/covid19-new-cases-positive-rate.png)
+
 What is the Software-ECG?
 
 > Software-EKG is a powerful tool for time series analysis developed by Johannes Weigend and others at QAware GmbH
 > Utilizing a highly efficient search index and optimized algorithms, 
 > the tool enables you to both visualize and analyze time series containing billions of values.
 
-Source: https://info.weigend.de/software-ekg-covid-edition
+Source: http://covid19.weigend.de
 
 Technology used for building:
 * Java 17
