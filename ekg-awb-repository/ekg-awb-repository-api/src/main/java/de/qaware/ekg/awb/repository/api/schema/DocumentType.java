@@ -11,7 +11,7 @@
 //       description:   Type field for solr table scheme.
 //______________________________________________________________________________
 //
-//        Copyright:    QAware GmbH
+//        Copyright:    Weigend AM GmbH & Co KG
 //______________________________________________________________________________
 package de.qaware.ekg.awb.repository.api.schema;
 

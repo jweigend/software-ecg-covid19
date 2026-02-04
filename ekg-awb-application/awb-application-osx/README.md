@@ -1,9 +1,35 @@
-# Software-EKG Distribution for MacOSX
-This module is a specialized distribution for MacOSX. It builds a OSX application ```Software-EKG.app``` with all features including time project and logfile analysis. If the application is built under OSX you get a DMG-File with a signed application in it. On Windows or Linux systems you get a ZIP-File with an unsigned application in it. In this case for the first start of the Software-EKG the controll-button must be pressed while open the application.
+# Software-EKG Distribution for macOS
 
-At the moment there is no maven build for this distribution.
-## Special configuration for OSX
-The storage pathes for the embedded solr core and the logfiles differs from the default behavour.
-The solr core will be placed under ```$HOME/Library/Application Support/QAware/Software-EKG/embeddedSolr/```.
-The logfiles are placed under ```$HOME/Library/Logs/Software-EKG```.
+This module builds a macOS application bundle `Software-EKG.app` for the COVID-19 Edition.
+
+## Build
+
+Build from the project root:
+
+```bash
+mvn install -f install.xml
+mvn clean install
+```
+
+The distribution will be created at:
+`target/Software-EKG_AWB_6.2.3-COVID-EDITION-SNAPSHOT_mac64.zip`
+
+## Start
+
+```bash
+cd target/
+unzip -q Software-EKG_AWB_6.2.3-COVID-EDITION-SNAPSHOT_mac64.zip
+Software-EKG.app/Contents/MacOS/start-software-ekg
+```
+
+Or double-click `Software-EKG.app` in Finder.
+
+**Note:** On first launch, macOS Gatekeeper may block the unsigned app. 
+Right-click the app and select "Open" to bypass this.
+
+## Special Configuration for macOS
+
+The storage paths differ from the default behavior:
+- Solr core: `$HOME/Library/Application Support/Software-EKG/embeddedSolr/`
+- Log files: `$HOME/Library/Logs/Software-EKG`
  

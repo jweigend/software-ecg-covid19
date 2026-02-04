@@ -45,7 +45,7 @@ const translations = {
         
         "footer.text": "Developed by Johannes Weigend & QAware GmbH",
         "footer.website": "Website",
-        "footer.license": "Open Source under MIT License."
+        "footer.license": "Open Source under GPLv3 License."
     },
     
     de: {
@@ -94,7 +94,7 @@ const translations = {
         
         "footer.text": "Entwickelt von Johannes Weigend & QAware GmbH",
         "footer.website": "Webseite",
-        "footer.license": "Open Source unter MIT-Lizenz."
+        "footer.license": "Open Source unter GPLv3-Lizenz."
     },
     
     pt: {
@@ -143,6 +143,6 @@ const translations = {
         
         "footer.text": "Desenvolvido por Johannes Weigend & QAware GmbH",
         "footer.website": "Website",
-        "footer.license": "Código Aberto sob Licença MIT."
+        "footer.license": "Código Aberto sob Licença GPLv3."
     }
 };

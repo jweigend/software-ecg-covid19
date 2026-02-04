@@ -48,6 +48,7 @@ for %%f in ("%CURRENT_DIR%\libs\javafx-*.jar") do (
     --add-opens java.base/java.lang=ALL-UNNAMED ^
     --module-path "%JAVAFX_MODULES%" ^
     --add-modules=javafx.controls,javafx.fxml,javafx.swing ^
+    -Dekg.solr.baseDir="%CURRENT_DIR%\solr" ^
     -Xmx8G ^
     -classpath "%CURRENT_DIR%\libs\*" ^
     de.qaware.ekg.awb.application.base.EkgCdiApplication

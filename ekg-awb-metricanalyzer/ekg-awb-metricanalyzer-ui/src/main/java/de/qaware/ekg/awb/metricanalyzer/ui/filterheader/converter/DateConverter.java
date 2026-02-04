@@ -3,7 +3,7 @@
 //          ProjectConfiguration:    Software EKG
 //______________________________________________________________________________
 //
-//         Author:      QAware GmbH 2009 - 2021
+//         Author:      Weigend AM GmbH & Co KG 2009 - 2025
 //______________________________________________________________________________
 //
 // Notice: This piece of software was created, designed and implemented by

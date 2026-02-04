@@ -9,7 +9,7 @@
  * description:
  * ______________________________________________________________________________
  * <p>
- * Copyright: (c) QAware GmbH, all rights reserved
+ * Copyright: (c) Weigend AM GmbH & Co KG, all rights reserved
  * ______________________________________________________________________________
  */
 package de.qaware.ekg.awb.metricanalyzer.bl.et;

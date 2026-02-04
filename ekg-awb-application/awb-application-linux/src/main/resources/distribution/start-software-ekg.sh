@@ -42,6 +42,7 @@ done < <(find "$SCRIPTPATH/libs" -maxdepth 1 -name 'javafx-*.jar' -print0 2>/dev
     --add-opens java.base/java.lang=ALL-UNNAMED \
     --module-path "$JAVAFX_MODULES" \
     --add-modules=javafx.controls,javafx.fxml,javafx.swing \
+    -Dekg.solr.baseDir="$SCRIPTPATH/solr" \
     -Xmx8G \
     -classpath "$SCRIPTPATH/libs/*" \
     de.qaware.ekg.awb.application.base.EkgCdiApplication

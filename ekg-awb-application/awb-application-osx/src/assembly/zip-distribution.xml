@@ -39,7 +39,7 @@
         <!-- Fallback data for OWID-COVID-Plugin (compressed) -->
         <file>
             <source>${basedir}/../awb-application-base/src/main/resources/covid-fallback-data.csv.gz</source>
-            <outputDirectory>Software-EKG.app/data</outputDirectory>
+            <outputDirectory>Software-EKG.app/Contents/data</outputDirectory>
         </file>
     </files>
 
