@@ -39,3 +39,6 @@ hs_err_pid*
 # Solr runtime data (generated at runtime)
 **/solr/**/data/
 **/solr/**/tlog/
+
+# Downloaded COVID data (generated at runtime, fallback data is in data/)
+covid-data.csv

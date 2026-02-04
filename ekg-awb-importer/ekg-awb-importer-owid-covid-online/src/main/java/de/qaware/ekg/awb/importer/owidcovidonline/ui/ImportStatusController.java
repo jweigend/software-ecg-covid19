@@ -27,7 +27,7 @@ public class ImportStatusController implements Initializable, EkgEventBusListene
     /**
      * After a successful import, the window close automatically after this amount of seconds.
      */
-    private static final int SECONDS_UNTIL_CLOSE = 3;
+    private static final int SECONDS_UNTIL_CLOSE = 1;
     /**
      * Alert window width in pixels.
      */

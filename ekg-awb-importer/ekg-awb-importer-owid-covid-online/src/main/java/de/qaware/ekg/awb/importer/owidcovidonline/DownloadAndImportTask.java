@@ -28,8 +28,6 @@ import org.slf4j.Logger;
 import java.io.*;
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.zip.GZIPInputStream;
-import java.util.zip.GZIPOutputStream;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -45,8 +43,8 @@ public class DownloadAndImportTask extends Task<Void> {
     private static final int CONNECTION_TIMEOUT = 5000;
     private static final int READ_TIMEOUT = 8000;
 
-    // OWID COVID data will be downloaded to and imported from the execution directory (compressed)
-    private static final String COVID_CSV_FILENAME = "covid-data.csv.gz";
+    // OWID COVID data will be downloaded to and imported from the execution directory (uncompressed)
+    private static final String COVID_CSV_FILENAME = "covid-data.csv";
 
     //Fallback data are stored in the data directory (compressed)
     private static final String COVID_CSV_FALLBACK_FILENAME = "data/covid-fallback-data.csv.gz";
@@ -298,7 +296,7 @@ public class DownloadAndImportTask extends Task<Void> {
     }
 
     /**
-     * Downloads the covid owid data and compresses it with GZip before storing.
+     * Downloads the covid owid data and stores it uncompressed.
      */
     private boolean download() {
         try {
@@ -307,19 +305,18 @@ public class DownloadAndImportTask extends Task<Void> {
             URL downloadURL = new URL(DOWNLOAD_URL);
             File destination = new File(COVID_CSV_FILENAME);
             
-            // Download and compress the CSV file with GZip
+            // Download the CSV file directly without compression
             try (InputStream inputStream = downloadURL.openStream();
-                 FileOutputStream fileOutputStream = new FileOutputStream(destination);
-                 GZIPOutputStream gzipOutputStream = new GZIPOutputStream(fileOutputStream)) {
+                 FileOutputStream fileOutputStream = new FileOutputStream(destination)) {
                 
                 byte[] buffer = new byte[8192];
                 int bytesRead;
                 while ((bytesRead = inputStream.read(buffer)) != -1) {
-                    gzipOutputStream.write(buffer, 0, bytesRead);
+                    fileOutputStream.write(buffer, 0, bytesRead);
                 }
             }
 
-            eventBus.publish(new DownloadProgressEvent(this, String.format("Download finished! Stored compressed file to '%s'", COVID_CSV_FILENAME)));
+            eventBus.publish(new DownloadProgressEvent(this, String.format("Download finished! Stored file to '%s'", COVID_CSV_FILENAME)));
             return true;
         } catch (IOException e) {
             LOGGER.error("Error while downloading file from {}", DOWNLOAD_URL, e);

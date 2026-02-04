@@ -22,6 +22,7 @@ import de.qaware.sdfx.main.CDIMain;
 import de.qaware.sdfx.platform.api.exceptions.PlatformException;
 import de.qaware.sdfx.windowmtg.api.ApplicationWindow;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.stage.Stage;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -66,10 +67,15 @@ public class EkgCdiApplication extends CDIMain {
 
             EkgLookup.lookup(EkgEventBus.class).subscribe(FinishEvent.class, event -> {
                 try {
+                    LOGGER.info("Shutting down Software-EKG...");
                     stop();
+                    Platform.exit();
+                    // Force JVM exit to ensure Solr Jetty and other non-daemon threads are terminated
+                    System.exit(0);
                     return true;
                 } catch (Exception e) {
-                    LOGGER.error("Error occurred at top application platform");
+                    LOGGER.error("Error occurred at top application platform", e);
+                    System.exit(1);
                 }
 
                 return false;

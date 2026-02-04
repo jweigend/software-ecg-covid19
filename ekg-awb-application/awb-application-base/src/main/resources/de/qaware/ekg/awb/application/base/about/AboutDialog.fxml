@@ -27,8 +27,8 @@
     </Pane>
 
     <Label text="Visit us: " layoutX="523" layoutY="521"/>
-    <Hyperlink id="linkHomepage" fx:id="linkHomepage" ellipsisString="" minWidth="40.0" prefHeight="40.0" layoutX="636"
-               layoutY="510"  text="www.weigend.de" textOverrun="CLIP" underline="true" visited="true">
+    <Hyperlink id="linkHomepage" fx:id="linkHomepage" ellipsisString="" minWidth="40.0" prefHeight="40.0" layoutX="570"
+               layoutY="510"  text="covid19.weigend.de" textOverrun="CLIP" underline="true" visited="true">
         <VBox.margin>
             <Insets left="-3.0"/>
         </VBox.margin>

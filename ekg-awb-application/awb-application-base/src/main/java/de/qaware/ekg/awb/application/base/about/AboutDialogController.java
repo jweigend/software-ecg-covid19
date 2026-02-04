@@ -30,8 +30,6 @@ import org.slf4j.Logger;
 import javax.inject.Inject;
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -132,12 +130,37 @@ public class AboutDialogController implements Initializable {
         }
 
         linkHomepage.setOnAction(event -> {
-            try {
-                java.awt.Desktop.getDesktop().browse(new URI("http://www.weigend.de"));
-            } catch (URISyntaxException | IOException e) {
-                LOGGER.warn("Could not open the url in the default system browser.", e);
-            }
+            openUrlInBrowser("http://covid19.weigend.de/");
         });
+    }
+
+    /**
+     * Opens the given URL in the system's default browser.
+     * Uses xdg-open on Linux, open on macOS, and rundll32 on Windows.
+     * This approach avoids AWT/JavaFX threading conflicts that can cause freezes.
+     *
+     * @param url The URL to open
+     */
+    private void openUrlInBrowser(String url) {
+        String os = System.getProperty("os.name").toLowerCase();
+        String[] command;
+        
+        if (os.contains("linux")) {
+            command = new String[]{"xdg-open", url};
+        } else if (os.contains("mac")) {
+            command = new String[]{"open", url};
+        } else if (os.contains("win")) {
+            command = new String[]{"rundll32", "url.dll,FileProtocolHandler", url};
+        } else {
+            LOGGER.warn("Unknown operating system: {}. Cannot open URL in browser.", os);
+            return;
+        }
+        
+        try {
+            new ProcessBuilder(command).start();
+        } catch (IOException e) {
+            LOGGER.warn("Could not open the URL '{}' in the default system browser.", url, e);
+        }
     }
 
     /**
