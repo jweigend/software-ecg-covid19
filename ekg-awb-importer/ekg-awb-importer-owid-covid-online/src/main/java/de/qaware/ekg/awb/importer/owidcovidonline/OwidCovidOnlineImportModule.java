@@ -136,7 +136,6 @@ public class OwidCovidOnlineImportModule extends ImportModule
 
         openImportStatusDialog();
         DownloadAndImportTask downloadAndImportTask = new DownloadAndImportTask(this);
-        VersionCheckerTask versionCheckerTask = new VersionCheckerTask();
 
         downloadAndImportTask.setOnFailed(v -> {
             // log error and inform user
@@ -157,7 +156,7 @@ public class OwidCovidOnlineImportModule extends ImportModule
         });
 
         downloadAndImportTask.start();
-        versionCheckerTask.start();
+        // Version check disabled - no update server available
     }
 
     /**
